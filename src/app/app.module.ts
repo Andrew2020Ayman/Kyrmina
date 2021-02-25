@@ -11,12 +11,14 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HeaderComponent } from './layout/header/header.component';
 import { HomeComponent } from './view/home/home.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { ProductsComponent } from './view/products/products.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
