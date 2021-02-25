@@ -1,0 +1,28 @@
+.FooterDiv{
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    bottom: 4%;
+    right: 9%;
+    text-align: end;
+    display: flex;
+    justify-content: flex-end;
+
+    h3{
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 13px;
+        padding-right: 1%;
+        span{
+            color: white;
+            font-size: 17px;
+        }
+    }
+    .socialDiv{
+       display: inline-flex;
+        i{
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 27px;
+            margin: 0 29%;
+        }
+    }
+}
