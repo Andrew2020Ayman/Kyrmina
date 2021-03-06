@@ -12,13 +12,20 @@ import { HeaderComponent } from './layout/header/header.component';
 import { HomeComponent } from './view/home/home.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ProductsComponent } from './view/products/products.component';
+import { AboutComponent } from './view/about/about.component';
+import { LoadingscreenComponent } from './layout/loadingscreen/loadingscreen.component';
+
+import {RoundProgressModule} from 'angular-svg-round-progressbar';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    ProductsComponent
+    ProductsComponent,
+    AboutComponent,
+    LoadingscreenComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,8 @@ import { ProductsComponent } from './view/products/products.component';
     SlickCarouselModule,
     CarouselModule,
     BrowserAnimationsModule,
-    OwlModule
+    OwlModule,
+    RoundProgressModule
   ],
   providers: [CarouselModule],
   bootstrap: [AppComponent]

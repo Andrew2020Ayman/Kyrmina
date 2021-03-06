@@ -6,11 +6,11 @@
             <nav class="navbar navbar-light bg-lignt BurgerMenu ">
 
                 <div class="col-md-2">
-                    <img src="../../../assets/final.png" class="LogoDiv"  [routerLink]="['']" >
+                    <img src="../../../assets/final.png" class="LogoDiv" id="LogoDiv"  [routerLink]="['']" >
                 </div>
 
                 <div class="col-md-6"> 
-                    <div class="LogoName">
+                    <div class="LogoName" id="LogoName">
                         <h1 class="CompanyName"> Kyrmina </h1>
                         <h1 class="FieldName"> Rubber&Plastic </h1>
                     </div>
@@ -20,7 +20,7 @@
                     <!-- <button class="quotebtn"> Contact Us</button> -->
                 </div>
 
-                <div class="col-md-1 px-1 minmarginTop">
+                <div class="col-md-1 px-1 minmarginTop" id="minmarginTop">
                     <div class="select">
                         <select name="Langselect" id="Langselect">
                           <option selected value="1">En</option>
@@ -31,7 +31,7 @@
 
                 <div class="col-md-1">
                     <div class="menu">
-                      <button class="nav-tgl " type="button" aria-label="toggle menu" >
+                      <button class="nav-tgl" id="nav-tgl" type="button" aria-label="toggle menu" >
                       <span aria-hidden="true"></span>
                     </button>
 
@@ -42,7 +42,7 @@
                               <div class="RouterLinks">
                                 <a class="listItem " routerLink="/Home" >Home</a>
                                 <a class="listItem " routerLink="/About" >About</a>
-                                <a class="listItem " routerLink="/Products" >Products</a>
+                                <a class="listItem " routerLink="/Product" >Products</a>
                                 <a class="listItem " routerLink="/Contact" >Contact Us</a>
                               </div>
                             </div>

@@ -32,6 +32,22 @@ export class HeaderComponent implements OnInit {
           })
         });
 
+
+        $(window).scroll(function(){
+           if($(this).scrollTop() >170){
+             document.getElementById("LogoDiv").style.display="none"
+             document.getElementById("LogoName").style.display = "none";
+             document.getElementById("minmarginTop").style.display = "none";
+            document.getElementById("nav-tgl").style.top = "0";
+           }else{
+            document.getElementById("LogoDiv").style.display="block"
+            document.getElementById("LogoName").style.display = "block";
+            document.getElementById("minmarginTop").style.display = "block";
+            document.getElementById("nav-tgl").style.top = "-29px";
+           }
+         });
+
+        
   }
 
 

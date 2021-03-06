@@ -1,0 +1,40 @@
+<div class="loadingScreen">
+
+    <div class="loadingDiv">
+       
+        <div class="TextPart">
+            <h1 > Kyrmina </h1>
+            <h3> Rubber & Plastic </h3>
+            <h4> {{ currentNum }}  %</h4>
+        </div>
+
+        <round-progress
+        class="circleClass"
+        [current]="currentNum"
+        [max]="100"
+        [color]="'#e0dede'"
+        [background]="'#777777'"
+        [radius]="radnum"
+        [stroke]="strokenum"
+        [semicircle]="false"
+        [rounded]="true"
+        [clockwise]="true"
+        [responsive]="false"
+        [duration]="1000"
+        [animation]="'easeOutQuad'"
+        [animationDelay]="0"
+        (onRender)="doSomethingWithCurrentValue($event)"></round-progress>
+    </div>
+   
+    <div class="overlay"></div>
+
+</div>
+
+
+ 
+    
+
+
+
+
+
