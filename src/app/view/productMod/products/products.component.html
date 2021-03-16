@@ -1,0 +1,90 @@
+
+ <div class="product noisy">
+      <div class="circleClass">
+
+		<!-- <ng-container *ngIf="owl"> 
+			<owl-carousel-o [options]="customOptions" #owlCar (translated)="getPassedData($event)">
+			   <ng-container *ngFor="let slide of productImages;let i = index">
+					 <ng-template  carouselSlide [id]="slide.id" id="owl-slide-1" dataHash="temp">
+					   <div class="imgDiv" >
+						 <img [src]="slide.image" alt="slide" class="ProductImg">
+                          <div class="overlayImg"></div>
+						 <div class="ProductDetails" >
+						   <h1 id=id-{{i}}> {{slide.title}} </h1>
+						 </div>
+					   </div>
+					  
+					 </ng-template>
+			   </ng-container>
+			</owl-carousel-o>
+
+
+			<p class="navBtn">
+				<a class="btn btn-success prevBtn" (click)="owlCar.prev()" >
+					<div class="arrowprevDiv noisy">
+						<div class="left"></div>
+					    <div class="leftTri"></div>
+					</div>
+				</a>
+				<a class="btn btn-success nextBtn" (click)="owlCar.next()">
+					<div class="arrownextDiv noisy">
+						<div class="right"></div>
+					    <div class="triangle"></div>
+					</div>
+					
+				</a>
+			</p>
+
+		 </ng-container> -->
+
+		 <!-- ---------------------- -->
+		 <div class="myslider1 asnavForClass " id="slider1">
+			<div class="item" *ngFor="let slide of productImages;let i = index">
+				<div class="imgDiv" >
+					<div class="overlayImg"></div>
+					<img [src]="slide.image" alt="slide" class="ProductImg">
+				</div>
+			</div>
+		  </div>
+		  <div class="myslider2 asnavForClass" id="slider2">
+			<div class="item" *ngFor="let slide of productImages;let i = index">
+				<div class="ProductDetails" >
+					<h1> {{slide.title}} </h1>
+				</div>
+
+				<a class="btn btn-4 exploreBtn" (click)="GoToProduct(slide.id)"><span>Explore Project</span></a> 
+			</div>
+	  </div>
+		  
+		  
+
+		 <!-- ---------------------- -->
+		
+	  </div>
+
+	  <div class="css"> 
+		
+		</div>
+
+	  <div class="slideNum">
+		<div class="myslider3 asnavForClass" id="slider3">
+			<div class="item" *ngFor="let slide of productImages;let i = index">
+				<div class="slideitem"> {{slide.id}}  </div>
+			</div>
+			
+			</div>  
+		
+	  <div class="slideline"></div>
+		<div class="AllSlide">4</div>
+	</div>
+
+
+
+	  <!-- <div class="slideNum">
+		  <div class="slideitem"> {{ slidenum+1 }} </div>
+		<div class="slideline"></div>
+		  <div class="AllSlide">4</div>
+	  </div> -->
+	
+ </div>
+

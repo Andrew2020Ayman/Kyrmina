@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 declare var $:any;
 @Component({
@@ -8,9 +9,10 @@ declare var $:any;
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private translate: TranslateService) { }
 
   ngOnInit(){
+
     const menu = document.querySelector('.menu');
     const btn = menu.querySelector('.nav-tgl');
     btn.addEventListener('click', evt => {
@@ -67,4 +69,15 @@ export class HeaderComponent implements OnInit {
   }
   /* -------------------------------------- */
 
+
+  getselectvalue(value){
+    console.log(value);
+    const dom: any = document.querySelector('body');
+    dom.classList.toggle('rtl'); 
+    if(value == 1){
+      this.translate.use('en');
+    }else if( value == 2){
+      this.translate.use('ar');
+    }
+  }
 }

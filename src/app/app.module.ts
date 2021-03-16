@@ -11,11 +11,21 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HeaderComponent } from './layout/header/header.component';
 import { HomeComponent } from './view/home/home.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { ProductsComponent } from './view/products/products.component';
+import { ProductsComponent } from './view/productMod/products/products.component';
 import { AboutComponent } from './view/about/about.component';
 import { LoadingscreenComponent } from './layout/loadingscreen/loadingscreen.component';
 
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
+import { ContactComponent } from './view/contact/contact.component';
+import { ProductItemComponent } from './view/productMod/product-item/product-item.component';
+
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+export const createTranslateLoader = (http: HttpClient) => {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+};
 
 @NgModule({
   declarations: [
@@ -25,7 +35,9 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
     FooterComponent,
     ProductsComponent,
     AboutComponent,
-    LoadingscreenComponent
+    LoadingscreenComponent,
+    ContactComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +46,15 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
     CarouselModule,
     BrowserAnimationsModule,
     OwlModule,
-    RoundProgressModule
+    RoundProgressModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [CarouselModule],
   bootstrap: [AppComponent]

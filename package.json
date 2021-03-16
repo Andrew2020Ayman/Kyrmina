@@ -20,6 +20,8 @@
     "@angular/platform-browser-dynamic": "~10.2.4",
     "@angular/router": "~10.2.4",
     "@fullpage/angular-fullpage": "0.0.14",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "angular-svg-round-progressbar": "^6.0.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^4.6.0",
@@ -32,6 +34,7 @@
     "rxjs": "~6.6.0",
     "script-loader": "^0.7.2",
     "slick-carousel": "^1.8.1",
+    "three": "^0.126.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

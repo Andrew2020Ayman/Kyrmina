@@ -11,8 +11,8 @@
 
                 <div class="col-md-6"> 
                     <div class="LogoName" id="LogoName">
-                        <h1 class="CompanyName"> Kyrmina </h1>
-                        <h1 class="FieldName"> Rubber&Plastic </h1>
+                        <h1 class="CompanyName"> {{'NAVBAR.COMPANY' | translate}} </h1>
+                        <h1 class="FieldName"> {{'NAVBAR.COMPDES' | translate}} </h1>
                     </div>
                </div>
 
@@ -22,9 +22,10 @@
 
                 <div class="col-md-1 px-1 minmarginTop" id="minmarginTop">
                     <div class="select">
-                        <select name="Langselect" id="Langselect">
-                          <option selected value="1">En</option>
-                          <option value="2">Ar</option>
+<!--                       <select *ngModel [(ngModel)]="selOption" (ngModelChange)="getselectvalue($event)" name="Langselect" id="Langselect">>
+ -->                        <select name="Langselect" id="Langselect" #selectedCategory (change)="getselectvalue(selectedCategory.value)" >
+                          <option selected value="1" >{{'NAVBAR.EN' | translate}}</option>
+                          <option value="2">{{'NAVBAR.AR' | translate}}</option>
                         </select>
                       </div>
                 </div>
@@ -40,10 +41,10 @@
                           <div class="overlay-content">
                             <div class="row MenuRow">
                               <div class="RouterLinks">
-                                <a class="listItem " routerLink="/Home" >Home</a>
-                                <a class="listItem " routerLink="/About" >About</a>
-                                <a class="listItem " routerLink="/Product" >Products</a>
-                                <a class="listItem " routerLink="/Contact" >Contact Us</a>
+                                <a class="listItem " routerLink="/Home" >{{'NAVBAR.HOME' | translate}}</a>
+                                <a class="listItem " routerLink="/About" >{{'NAVBAR.ABOUT' | translate}}</a>
+                                <a class="listItem " routerLink="/Product" >{{'NAVBAR.PRODUCT' | translate}}</a>
+                                <a class="listItem " routerLink="/Contact" >{{'NAVBAR.CONTACT' | translate}}</a>
                               </div>
                             </div>
                             

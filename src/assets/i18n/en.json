@@ -1,0 +1,33 @@
+{
+    "NAVBAR":{
+        "COMPANY":"kyrmina",
+        "COMPDES":"Rubber&Plastic",
+        "HOME":"Home",
+        "ABOUT":"About",
+        "PRODUCT":"Products",
+        "CONTACT":"Contact",
+        "EN":"Eng",
+        "AR":"عربي"
+     },
+     "FOOTER":{
+         "BY":"Created By",
+         "NAME":"Andrew Ayman"
+     },
+     "HOME":{
+         "COMPNAME":"Kyrmina",
+         "DESI":"Hello, we build things",
+         "DESII":" This is a Bootstrap 4 based template, helping you to build modern and beautiful websites ",
+         "PRODUCT":"Products",
+         "ABOUT":"About",
+         "ABOUTDES":" This describes what we do and what is our mission. At right you can see the awesome people behind. Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit. Maecenas a sem ultrices neque vehicula fermentum a sit amet nulla. ",
+         "CONTACT":"Contact",
+         "CONTACTMSG":"For questions about our company and products found on our stores.",
+         "ADDRESSTITLE":"Address",
+         "ADDRESS":"15 Hassan Omran St. <br>- gesr el suez - Cairo",
+         "CALL":"Call",
+         "EMAIL":"Email",
+         "SEND":"Send Now",
+         "WRITEMSG":"Write Message"
+     }
+
+}

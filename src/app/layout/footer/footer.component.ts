@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 declare var $:any;
 @Component({
@@ -6,18 +7,29 @@ declare var $:any;
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent implements OnInit  {
 
   @Input() footerPostion = "1";
-  constructor() { }
+  constructor(public router: Router) { 
+    
+  }
 
-  ngOnInit(): void {
-    if(this.footerPostion == "1"){
-      $('.FooterDiv').css("position","absolute")
+  ngOnInit() {
+
+     /* ---- set footer postion ---- */
+     if(this.footerPostion == "1"){
+      $('.FooterNav').css("position","absolute");
+      $('.FooterNav .footerDiv h3').css("color","rgba(255, 255, 255, 0.5)");
+       $('.FooterNav .footerDiv h3 span').css("color","white");
+       $('.socialDiv i').css("color","rgba(255, 255, 255, 0.5)");
     }
     else if(this.footerPostion == "2"){
-      $('.FooterDiv').css("position","relative")
+      $('.FooterNav').css("position","relative");
+      $('.FooterNav .footerDiv h3').css("color","#373737");
+      $('.FooterNav .footerDiv h3 span').css("color","black");
+      $('.socialDiv i').css("color","#373737");
     }
+   
   }
 
 }

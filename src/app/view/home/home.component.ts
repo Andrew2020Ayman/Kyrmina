@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit  {
   
   /* ----------variables ------------- */
   customOptions: OwlOptions = {
-    rtl: false,
+    rtl: true,
     loop: false,
     dots: true,
     autoplay: false,
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit  {
   };
 
   customOptionsII: any = {
-    rtl: false,
+    rtl: true,
     loop: true,
     dots: false,
     autoplay: false,
@@ -76,6 +76,7 @@ export class HomeComponent implements OnInit  {
   };
 
 
+  
   AboutImages=[
     {
       id:1,
@@ -167,8 +168,9 @@ export class HomeComponent implements OnInit  {
     dots: true,
     vertical: true,
     verticalSwiping: true,
-    draggable:false
-        
+    draggable:false,
+    cssEase: 'ease-in-out',
+    speed:500    
     });
 
     function mouseWheel($slider) {
@@ -186,6 +188,7 @@ export class HomeComponent implements OnInit  {
        
       }
     }
+    
 });
 
 /* ---------------------------------------------- */

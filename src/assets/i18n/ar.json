@@ -1,0 +1,32 @@
+{
+    "NAVBAR":{
+        "COMPANY":"كيرمينا",
+        "COMPDES":"للكاوتشوك و البلاستيك",
+        "HOME":"الرئيسية",
+        "ABOUT":"من نحن",
+        "PRODUCT":"المنتجات",
+        "CONTACT":"تواصل",
+        "EN":"Eng",
+        "AR":"عربي"
+     },
+     "FOOTER":{
+         "BY":"بواسطة",
+         "NAME":"أندرو ايمن"
+     },
+     "HOME":{
+         "COMPNAME":"كيرمينا",
+         "DESI":"أهلا نحن متخصصون فى كسوة الدرافيل و السلندرات",
+         "DESII":" This is a Bootstrap 4 based template, helping you to build modern and beautiful websites ",
+         "PRODUCT":"المنتجات",
+         "ABOUT":"من نحن",
+         "ABOUTDES":" This describes what we do and what is our mission. At right you can see the awesome people behind. Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit. Maecenas a sem ultrices neque vehicula fermentum a sit amet nulla. ",
+         "CONTACT":"تواصل معنا",
+         "CONTACTMSG":"لمزيد من الاسئلة حول الشركة و المنتجات",
+         "ADDRESSTITLE":"العنوان",
+         "ADDRESS":"15 شارع حسن عمران",
+         "CALL":"أتصل",
+         "EMAIL":"الأيميل",
+         "SEND":"أرسل",
+         "WRITEMSG":"اكتب الرسالة"
+     }
+}

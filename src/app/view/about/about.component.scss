@@ -196,6 +196,42 @@ height: 100vh;
   }
   
   
-  
+  @media only screen and (min-width: 1600px) {
+    .wrapper {
+      p.eyebrow {
+      font-size: 29px;
+      }
+      h1 {
+        font-size: 84px;
+      }
+      p{
+        font-size: 21px;
+      }
+    }
+    
+    .WhoPart {
+      .WhoTxt {
+      font-size: 65px;
+      }
+      .WhoDes {
+        font-size: 1.7rem;
+      }
+    } 
+
+    .WhatPart{
+      .WhatTxt {
+      font-size: 65px;
+      }
+      .WhatDes {
+        font-size: 1.7rem;
+      }
+      .productlist ul li {
+        font-size: 25px;
+        font-weight: 200;
+    }
+    } 
+
+      
+  }
 
   
