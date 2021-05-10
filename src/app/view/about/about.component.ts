@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AboutService } from 'src/app/core/sharedServices';
 
 declare var $:any;
 @Component({
@@ -8,11 +9,14 @@ declare var $:any;
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  fetchData = false;
+  WhoDes="";
+  WhatDes="";
+  whatList=[];
+  constructor( private aboutServ:AboutService) { }
   ngOnInit(): void {
     document.querySelector('video').playbackRate = 1;
  
-
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
           e.preventDefault();
@@ -22,8 +26,18 @@ export class AboutComponent implements OnInit {
           });
       });
   });
+
+  this.getData(()=>{
+    this.fetchData = true;
+  })
   }
  
-
+getData(callback){
+   let AboutData = this.aboutServ.getaboutData();
+   this.WhoDes = AboutData.Who;
+   this.WhatDes = AboutData.what;
+   this.whatList = AboutData.whatList;
+   callback();
+}
   
 }

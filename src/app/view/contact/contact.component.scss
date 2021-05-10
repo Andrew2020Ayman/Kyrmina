@@ -1,6 +1,7 @@
 .contact{
   width: 100%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 h1, h2, h3, h4,p {
   text-shadow: 0 1px 2px rgb(0 0 0 / 20%);
@@ -226,6 +227,122 @@ form textarea {
     left: 3%;
     font-size: 19px;
     font-family: "Krona One", sans-serif;
+  }
+}
+
+::ng-deep{
+  .rtl{
+    img {
+      transform: none;
+    }
+
+    .wrapper {
+      p.eyebrow {
+         font-size: 20px !important;
+       padding-left: unset !important;
+       padding-right: 60px !important;
+       margin-bottom: 20px !important;
+       letter-spacing:3px !important;
+       font-family: 'Cairo' !important;
+     }
+      p.eyebrow:before {
+         left: unset !important;
+         right: 0 !important;
+         top: 53% !important;
+     }
+     a.arrow-down-btn {
+         display: inline-block;
+         width: 33px;
+         margin-top: 20px;
+         color: white;
+         svg>* {
+             fill: white;
+         }
+     }
+    h1{
+      text-align: start !important;
+     font-size: 74px !important;
+     margin-bottom: 30px !important;
+     letter-spacing: 0px !important;
+     text-transform: uppercase !important;
+     font-family: 'Cairo' !important;
+     font-weight: 700 !important;
+     color: white !important;
+    }
+    p{
+     text-align: start !important;
+        color: white !important;
+        font-family: 'Cairo' !important;
+    }
+    }
+    .wrapper .scrollComp {
+      right: 12% ;
+      font-family: 'El Messiri';
+    }
+    .scrollComp {
+      font-family: 'El Messiri';
+    }
+
+    .formSec{
+      .textPart{ 
+        padding:  0% 7%;
+    
+        h1{
+          font-family: 'Cairo' !important;
+          text-align: start !important;
+        }
+        .msgTxt{
+          padding: 0% 2% 10% 3% !important;
+          font-family: 'Cairo' !important;
+          text-align: start !important;
+        }
+        h4{
+          text-align: start !important;
+        }
+    
+        .parTxt{
+            text-align: start;
+          .mobileIcon{
+            padding: 0% 1.4% 0% 2% !important;
+          }
+        }
+      }
+    
+     
+    .btn {
+      position: relative;
+      font-family: "Gotham-Medium","Helvetica Neue",sans-serif;
+      display: inline-block;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: white;
+      padding: 14px 30px;
+        background: #373737;
+        text-align: center;
+        font-size: 13px;
+    }
+    }
+
+    .locationtxt {
+      font-family: 'Cairo' !important;
+      text-align: start !important;
+      font-size: 50px !important;
+      font-weight: 700 !important;
+  }
+  .addressDiv {
+      font-family: 'Cairo' !important;
+      text-align: start !important;
+  }
+
+    .mapSec{
+      h4{
+        right: 3% !important;
+        left: unset !important;
+        font-size: 19px !important;
+        font-family: 'Cairo' !important;
+      }
+    }
   }
 }
 

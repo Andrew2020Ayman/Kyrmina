@@ -1,27 +1,22 @@
-<div class="prodItem">
+<div class="prodItem" *ngIf="fetchData">
 
     <div class="headingDiv">
-       <h1> Rubber Rollers</h1> 
+       <h1> {{productData.title}} </h1> 
     </div>
     <div class="HLineDiv"></div>
     
     <div class="ImgDiv">
-        <img src="../../../../assets/about/home2.png" alt="">
+        <img src={{productData.image}} alt="">
     </div>
 
     <div class="HLineDiv"></div>
 
     <div class="textDiv">
-        <h3>
-            Seen you eyes son show. Far two
-unaffected one alteration apartments
-celebrated but middletons interested.
-Procured shutters mr it feelings.
-        </h3>
+        <div [innerHTML]="productData.Des"></div>
     </div>
 
     
 </div>
 <div class="noisy"></div>
 
-<app-footer [footerPostion]="2"></app-footer>
+<app-footer [footerPostion]="1"></app-footer>

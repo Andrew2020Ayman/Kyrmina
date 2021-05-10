@@ -295,6 +295,7 @@ h2{
     height: 2px;
     transform: rotateZ(134deg);
     background: #7a7a7a;
+	margin-right: 26%;
 	}
 	.AllSlide{
      color: #7a7a7a;
@@ -554,6 +555,23 @@ h2{
 	}
 }
 
+::ng-deep {
+	.rtl{
+		.myslider2 .ProductDetails h1 {
+			color: white;
+			font-family: 'Cairo';
+			letter-spacing: 0;
+			font-size: 72px;
+		}
+		.exploreBtn {
+			padding: 1% 5%;
+			font-family: 'Cairo';
+			letter-spacing: 1;
+			line-height: 1.3;
+			font-size: 16px;
+		}
+	}
+}
 
 
 /* #eeece6 */

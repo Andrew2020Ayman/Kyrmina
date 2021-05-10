@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { ProductService } from 'src/app/core/sharedServices';
 
 declare var $:any;
 @Component({
@@ -9,8 +11,9 @@ declare var $:any;
 })
 export class ProductsComponent implements OnInit {
 
-
+ fetchData = false;
   slidenum = 0;
+  slidesLen = '0';
   customOptions: any = {
     rtl: false,
     loop: false,
@@ -77,7 +80,8 @@ export class ProductsComponent implements OnInit {
     }
   };
 
-  productImages=[
+  productImages = [];
+  EngproductImages=[
     {
       id:1,
       image:"https://www.precisionurethane.com/assets/images/content/urethane_rollers_gallery.jpg",
@@ -104,6 +108,36 @@ export class ProductsComponent implements OnInit {
     },
 
   ];
+  ArabicNumbers= ['۰','۱','۲','۳','٤','۵','۶','۷','۸','۹'];
+
+  ArabicproductImages = [];
+  /* ArabicproductImages=[
+    {
+      id:'۱',
+      image:"https://www.precisionurethane.com/assets/images/content/urethane_rollers_gallery.jpg",
+      title:"كسوة سلندرات",
+      Des:"Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit.Maecenas a sem ultrices neque vehicula fermentum a sit amet nulla."
+    },
+    {
+      id:'۲',
+      image:"https://www.danskgummi.com/wp-content/uploads/2020/08/Polyurethane-PU-rollers-and-conveyors-640x640.jpg",
+      title:"بولى يوريثان",
+      Des:"Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit.Maecenas a sem ultrices neque vehicula fermentum a sit amet nulla."
+    },
+    {
+      id:'۳',
+      image:"https://www.chemline.net/wp-content/uploads/2020/09/Custom-Formulated-Urethane-Rollers-small.jpg",
+      title:"سلندرات سيلكون",
+      Des:"Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit.Maecenas a sem ultrices neque vehicula fermentum a sit amet nulla."
+    },
+    {
+      id:'٤',
+      image:"https://www.colorcopiesusa.com/blog/wp-content/uploads/2018/07/PrintRollers.jpeg",
+      title:"انالوكس",
+      Des:"Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit.Maecenas a sem ultrices neque vehicula fermentum a sit amet nulla."
+    },
+
+  ]; */
   owl:boolean = true;
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -113,16 +147,67 @@ export class ProductsComponent implements OnInit {
     }, 5);
   }
   
-  constructor(private router:Router) { }
+  boolDR;
+  constructor(public router:Router,private translate:TranslateService,private prodServ:ProductService) { 
 
-  
+    this.getProductData(()=>{
+      this.fetchData = true;
+      this.productImages = this.ArabicproductImages;
+    })
+    
+     /*  let ProdLen = this.productImages.length;
+      this.slidesLen = this.ArabicNumbers[ProdLen]; 
+      let lang = this.translate.defaultLang;
+      if(lang == 'ar'){
+        this.slidesLen = this.ArabicNumbers[ProdLen]; 
+        this.boolDR = 'rtl';
+      }else{
+        this.slidesLen = ProdLen.toString(); 
+        this.boolDR = 'ltr';
+      } */
+
+  }
+
+  rtl_slick(){
+    let lang = localStorage.getItem("lang");
+    if (lang === "ar") {
+       return true;
+    } else {
+       return false;
+    }}
+    
+
+    
   ngOnInit(): void {
 
-    $(document).ready(function () {
+    
+    
+    this.translate.onLangChange.subscribe(res=>{
+      this.productImages = this.ArabicproductImages;
+      let ProdLen = this.productImages.length;
+  
+        let currLang = this.translate.currentLang;
+      if(currLang == 'ar'){
+
+        this.slidesLen = this.ArabicNumbers[ProdLen]; 
+     
+      }else{
+
+        this.slidesLen = ProdLen.toString(); 
+      } 
+      $('.myslider1').slick('refresh');
+      $('.myslider2').slick('refresh');
+      $('.myslider3').slick('refresh');
+    }); 
+
+    $(document).ready( () => {
+
+     
+
       const $slider1 = $(".myslider1");
       $slider1
       .slick({
-
+        rtl:this.rtl_slick(),
         slidesToScroll: 1,
         arrows: true,
         infinite:false,
@@ -134,6 +219,8 @@ export class ProductsComponent implements OnInit {
         prevArrow:"<a class='btn prevBtn' ><div class='arrowprevDiv noisy'><div class='left'></div><div class='leftTri'></div></div></a>",
         nextArrow: "<a class='btn nextBtn'><div class='arrownextDiv noisy'><div class='right'></div><div class='triangle'></div></div></a>" 
         });
+
+        
 
       $slider1.on('beforeChange', (event, slick, currentSlide, nextSlide)=>{
         
@@ -152,7 +239,7 @@ export class ProductsComponent implements OnInit {
       const $slider2 = $(".myslider2");
       $slider2
       .slick({
-    
+        rtl:this.rtl_slick(),
         slidesToScroll: 1,
         arrows: false,
         infinite:false,
@@ -164,7 +251,7 @@ export class ProductsComponent implements OnInit {
       const $slider3 = $(".myslider3");
       $slider3
       .slick({
-    
+        rtl:this.rtl_slick(),
         slidesToScroll: 1,
         arrows: false,
         infinite:false,
@@ -175,25 +262,38 @@ export class ProductsComponent implements OnInit {
         asNavFor: '.asnavForClass'   
         });
 
-      $slider1
-      .on('swipe', (event, slick, direction)=>{
-        console.log(direction);
-        // left
-      })
-
-      $slider1.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        console.log(event);
-      });
-
+        $slider1.on('aftreChange', (event, slick, currentSlide, nextSlide)=>{
+        
+          $slider1.slick({
+            rtl: this.rtl_slick
+          })
+        });
+        $slider2.on('aftreChange', (event, slick, currentSlide, nextSlide)=>{
+        
+          $slider2.slick({
+            rtl: this.rtl_slick
+          })
+        });
+        $slider3.on('aftreChange', (event, slick, currentSlide, nextSlide)=>{
+        
+          $slider3.slick({
+            rtl: this.rtl_slick
+          })
+        });
     });
    
-    
-    
+      
 
   }
- 
+
+  
   GoToProduct(slideId){
     this.router.navigateByUrl("Productitem/"+ slideId);
+  }
+
+  getProductData(callback){
+    this.ArabicproductImages = this.prodServ.getproductData();
+    callback();
   }
   /* activeSlides: SlidesOutputData;
 

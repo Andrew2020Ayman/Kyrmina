@@ -22,6 +22,7 @@ import { ProductItemComponent } from './view/productMod/product-item/product-ite
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core/core.module';
 
 export const createTranslateLoader = (http: HttpClient) => {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -48,6 +49,7 @@ export const createTranslateLoader = (http: HttpClient) => {
     OwlModule,
     RoundProgressModule,
     HttpClientModule,
+    CoreModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

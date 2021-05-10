@@ -21,13 +21,36 @@
          "ABOUT":"About",
          "ABOUTDES":" This describes what we do and what is our mission. At right you can see the awesome people behind. Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit. Maecenas a sem ultrices neque vehicula fermentum a sit amet nulla. ",
          "CONTACT":"Contact",
-         "CONTACTMSG":"For questions about our company and products found on our stores.",
+         "CONTACTMSG":"If you have questions or just want to get in touch , use the from. We look forward to hearing from you! ",
          "ADDRESSTITLE":"Address",
-         "ADDRESS":"15 Hassan Omran St. <br>- gesr el suez - Cairo",
          "CALL":"Call",
          "EMAIL":"Email",
          "SEND":"Send Now",
-         "WRITEMSG":"Write Message"
-     }
+         "WRITEMSG":"Write Message",
+         "NAME":"Name",
+         "MSG":"Message",
+         "MOREDETAILS":"More Details"
+     },
+     "ABOUT":{
+        "ABOUT":"About Us",
+        "KYRMINA":"KYRMINA",
+        "TITLE":"FOR RUBBER & PLASTIC.",
+        "WHOTITLE":"who we are",
+        "WHATTITLE":"what we do",
+        "SCROLL":"Scroll"
+    },
+    "CONTACT":{
+        "CONTACT":"Contact",
+        "WELCOME":"WELCOME",
+        "TOKYRMINA":"TO KYRMINA",
+        "SCROLL":"Scroll",
+        "OREMAIL":"OR Email us here",
+        "LOCATIONS":"LOCATIONS",
+        "GETINTOUCH":"GET IN TOUCH"
+    },
+    "PRODUCT":{
+        "EXPLORE":"Explore Product"
+    }
 
 }
+

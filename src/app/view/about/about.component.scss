@@ -195,7 +195,95 @@ height: 100vh;
     }
   }
   
-  
+  ::ng-deep{
+    .rtl{
+      .wrapper {
+         p.eyebrow {
+            font-size: 20px !important;
+          padding-left: unset !important;
+          padding-right: 60px !important;
+          margin-bottom: 20px !important;
+          letter-spacing:3px !important;
+          font-family: 'Cairo' !important;
+        }
+         p.eyebrow:before {
+            left: unset !important;
+            right: 0 !important;
+            top: 53% !important;
+        }
+        a.arrow-down-btn {
+            display: inline-block;
+            width: 33px;
+            margin-top: 20px;
+            color: white;
+            svg>* {
+                fill: white;
+            }
+        }
+       h1{
+         text-align: start !important;
+        font-size: 74px !important;
+        margin-bottom: 30px !important;
+        letter-spacing: 0px !important;
+        text-transform: uppercase !important;
+        font-family: 'Cairo' !important;
+        font-weight: 700 !important;
+        color: white !important;
+       }
+       p{
+        text-align: start !important;
+           color: white !important;
+           font-family: 'Cairo' !important;
+       }
+    }
+    
+    .WhoPart{
+        padding: 9% 16% 9% 15% !important;
+        .WhoTxt{
+            font-family: 'Cairo' !important;
+         }
+        .WhoDes{
+          font-family: 'Cairo' !important;
+        }
+    }
+    
+    .WhatPart{
+        padding: 9% 16% 9% 15% !important;
+        .WhatTxt{
+          font-family: 'Cairo' !important;
+        }
+        .WhatDes{
+            font-family: 'Cairo' !important;
+            margin-top: 1.5rem !important;
+            font-size: 1.3rem !important;
+            line-height: 1.75 !important;
+            padding: 0% 43% 0% 18% !important;
+            text-align: start !important;
+    
+        }
+        .productlist{
+            margin-top: 1.5rem;
+            text-align: start !important;
+            margin-right: -20% !important;
+            margin-left: unset !important;
+            ul{
+                li {
+                  font-size: 24px !important;
+                  font-family: 'Cairo' !important;
+                }
+            }
+        }
+    }
+
+   .wrapper .scrollComp {
+      right: 12% ;
+      font-family: 'El Messiri';
+    }
+    .scrollComp {
+      font-family: 'El Messiri';
+    }
+    }
+  }
   @media only screen and (min-width: 1600px) {
     .wrapper {
       p.eyebrow {

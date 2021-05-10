@@ -1,5 +1,7 @@
 import { AfterViewChecked, AfterViewInit, Component, DoCheck, HostListener, OnInit, ViewChild } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { CarouselComponent, OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
+import { HomeService } from 'src/app/core/sharedServices';
 
 
 declare var $:any;
@@ -13,8 +15,10 @@ export class HomeComponent implements OnInit  {
   @ViewChild('owlCar') carouselEl: CarouselComponent;
   
   /* ----------variables ------------- */
-  customOptions: OwlOptions = {
-    rtl: true,
+  transBool = true;
+  fetchData = true;
+  customOptions: any = {
+    rtl:this.rtl_slick(),
     loop: false,
     dots: true,
     autoplay: false,
@@ -42,9 +46,68 @@ export class HomeComponent implements OnInit  {
       }
     }
   };
-
+  customOptionsAr: any = {
+    rtl:true,
+    loop: false,
+    dots: true,
+    autoplay: false,
+    autoplaySpeed: false,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    items: 2,
+    margin:8,
+    autoWidth:true,
+    autoHeight: true,
+    responsiveRefreshRate: 500,
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 2
+      },
+      940: {
+        items: 2
+      }
+    }
+  };
   customOptionsII: any = {
-    rtl: true,
+     rtl:this.rtl_slick(),
+    loop: true,
+    dots: false,
+    autoplay: false,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    items: 1,
+    nav:true,
+    margin:8,
+    autoWidth:true,
+    autoHeight: true,
+    responsiveRefreshRate: 500,
+
+    navText: [ '<div class="owlPrev"></div>', '<div class="owlNext"></div>' ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 1
+      },
+      740: {
+        items: 1
+      },
+      940: {
+        items: 1
+      }
+    }
+  };
+ customOptionsIII: any = {
+    rtl:true,
     loop: true,
     dots: false,
     autoplay: false,
@@ -75,8 +138,11 @@ export class HomeComponent implements OnInit  {
     }
   };
 
+  HomeData={};
+  AboutData={};
+  ProductsData=[];
+  ContactData={};
 
-  
   AboutImages=[
     {
       id:1,
@@ -134,10 +200,33 @@ export class HomeComponent implements OnInit  {
     }, 5);
   }
   /* ---------------------------------- */
-  constructor() { }
+  constructor(public translate:TranslateService,private homeServ:HomeService) {}
 
+   rtl_slick(){
+    if ($('body').hasClass("rtl")) {
+       return true;
+    } else {
+       return false;
+    }}
 
   ngOnInit(): void {
+
+    this.getData(()=>{
+      this.fetchData = true;
+    });
+  this.translate.onLangChange.subscribe(res=>{
+      let currLang = this.translate.currentLang;
+    if(currLang == 'ar'){
+      $('owl-carousel-o').addClass('owl-rtl');
+      $('owl-carousel-o div').addClass('owl-rtl');
+      this.transBool = true;
+    }else{
+      this.transBool = false;
+      $('owl-carousel-o').removeClass('owl-rtl');
+      $('owl-carousel-o div').removeClass('owl-rtl');
+    } 
+  });
+
   
     /* --------mouse move---------- */
     $(document).ready(function() {
@@ -188,12 +277,19 @@ export class HomeComponent implements OnInit  {
        
       }
     }
-    
+
 });
 
 /* ---------------------------------------------- */
 
 }
 
+getData(callback){
+  this.HomeData = this.homeServ.getHomeData();
+   this.AboutData = this.homeServ.getAboutData();
+   this.ProductsData = this.homeServ.getProductData();
+   this.ContactData = this.homeServ.getContactData();
+   callback();
+}
 
 }

@@ -38,9 +38,6 @@
     font-weight: 700;
 }
 .LogoDiv{
-    width: 56%;
-    margin-left: 16%;
-    margin-top: -6%;
     width: 44%;
     margin-left: 16%;
     margin-top: -6%;
@@ -302,7 +299,20 @@ select {
     transform: rotate(45deg);
  }
  
-
+ ::ng-deep{
+  .rtl{
+    .LogoDiv{
+      width: 44%;
+      /* margin-right: 16%;
+      margin-left: unset; */
+      margin-top: -6%;
+      background: white;
+    }
+    .RouterLinks {
+      text-align: start;
+    }
+  }
+ }
  @media only screen and (min-width: 1600px) {
    
     .LogoDiv {

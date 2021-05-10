@@ -19,9 +19,11 @@
         color: rgba(255, 255, 255, 0.5);
         font-size: 11px;
         padding-right: 1%;
+        width: 300px;
+        margin: .3% 0% 0% 0%;
         span{
             color: white;
-            font-size: 14px;
+            font-size: 15px;
         }
     }
     .socialDiv{
@@ -33,7 +35,20 @@
         }
     }
 }
+::ng-deep{
+    .rtl{
+        .FooterNav{
 
+            h3{
+                font-family: 'Cairo' !important;
+                span{
+                    margin: 0% 3% !important;
+                }
+            }
+          
+        }
+    }
+}
 @media only screen and (min-width: 1600px) {
     .FooterNav{
         h3{

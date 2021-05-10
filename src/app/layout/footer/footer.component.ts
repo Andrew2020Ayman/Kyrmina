@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 declare var $:any;
 @Component({
@@ -10,7 +11,7 @@ declare var $:any;
 export class FooterComponent implements OnInit  {
 
   @Input() footerPostion = "1";
-  constructor(public router: Router) { 
+  constructor(public router: Router , public translate:TranslateService) { 
     
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 declare var $:any;
@@ -9,7 +10,11 @@ declare var $:any;
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private translate: TranslateService) { }
+  currentLang;
+  constructor(public translate: TranslateService,public router:Router) { 
+    let x = localStorage.getItem("lang")
+    this.translate.setDefaultLang(x);
+  }
 
   ngOnInit(){
 
@@ -42,7 +47,7 @@ export class HeaderComponent implements OnInit {
              document.getElementById("minmarginTop").style.display = "none";
             document.getElementById("nav-tgl").style.top = "0";
            }else{
-            document.getElementById("LogoDiv").style.display="block"
+            document.getElementById("LogoDiv").style.display="initial"
             document.getElementById("LogoName").style.display = "block";
             document.getElementById("minmarginTop").style.display = "block";
             document.getElementById("nav-tgl").style.top = "-29px";
@@ -71,13 +76,17 @@ export class HeaderComponent implements OnInit {
 
 
   getselectvalue(value){
-    console.log(value);
     const dom: any = document.querySelector('body');
     dom.classList.toggle('rtl'); 
     if(value == 1){
       this.translate.use('en');
+    this.translate.setDefaultLang('en'); 
+    localStorage.setItem("lang","en");
+
     }else if( value == 2){
       this.translate.use('ar');
+      this.translate.setDefaultLang('ar');
+      localStorage.setItem("lang","ar");
     }
   }
 }
