@@ -1,0 +1,60 @@
+{
+    "HEAD":{
+        "TITLE":"كيرمينا لمنتجات الكاوتشوك"
+    },
+    "NAVBAR":{
+        "COMPANY":"كيرمينا",
+        "COMPDES":"لمنتجات الكاوتشوك",
+        "HOME":"الرئيسية",
+        "ABOUT":"من نحن",
+        "PRODUCT":"المنتجات",
+        "CONTACT":"تواصل",
+        "EN":"Eng",
+        "AR":"عربي"
+     },
+     "FOOTER":{
+         "BY":"بواسطة",
+         "NAME":"أندرو ايمن"
+     },
+     "HOME":{
+         "COMPNAME":"كيرمينا",
+         "DESI":"أهلا نحن متخصصون فى كسوة الدرافيل و السلندرات",
+         "DESII":" This is a Bootstrap 4 based template, helping you to build modern and beautiful websites ",
+         "PRODUCT":"المنتجات",
+         "ABOUT":"من نحن",
+         "ABOUTDES":" This describes what we do and what is our mission. At right you can see the awesome people behind. Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit. Maecenas a sem ultrices neque vehicula fermentum a sit amet nulla. ",
+         "CONTACT":"تواصل معنا",
+         "CONTACTMSG":"عميلنا العزيز إذا كان لديك أي استفسار أو لديك أي مقترح  فرأيك يهمنا",
+         "ADDRESSTITLE":"العنوان",
+         "NAME":"الأسم",
+         "MSG":"الرسالة",
+         "CALL":"أتصل",
+         "EMAIL":"الأيميل",
+         "SEND":"أرسل",
+         "WRITEMSG":"اكتب الرسالة",
+         "MOREDETAILS":"تفاصيل أكثر"
+     },
+     "ABOUT":{
+         "ABOUT":"من نحن",
+         "KYRMINA":"كيرمينا",
+         "TITLE":"للكاوتشوك و البلاستيك",
+        "ABOUTDES":"نحن متخصصون فى كسوة السلندارات و الدرافيل بجميع الأطوال والأقطار ",
+         "WHOTITLE":"من نكون",
+         "WHATTITLE":"ماذا نقدم",
+         "SCROLL":"مرر"
+     },
+     "CONTACT":{
+         "CONTACT":"تواصل معنا",
+         "WELCOME":"أهلاً",
+         "TOKYRMINA":"بك فى كيرمينا",
+         "SCROLL":"مرر",
+         "OREMAIL":"أو مراسلتنا عبر البريد الإلكتروني هنا",
+         "LOCATIONS":"عناويننا",
+         "GETINTOUCH":"تواصل معنا"
+     },
+     "PRODUCT":{
+         "EXPLORE":"تصفح المنتج"
+     }
+
+
+}

@@ -1,0 +1,59 @@
+{
+    "HEAD":{
+        "TITLE":"Kyrmina For Rubber Products"
+    },
+    "NAVBAR":{
+        "COMPANY":"kyrmina",
+        "COMPDES":"For Rubber Products",
+        "HOME":"Home",
+        "ABOUT":"About",
+        "PRODUCT":"Products",
+        "CONTACT":"Contact",
+        "EN":"Eng",
+        "AR":"عربي"
+     },
+     "FOOTER":{
+         "BY":"Created By",
+         "NAME":"Andrew Ayman"
+     },
+     "HOME":{
+         "COMPNAME":"Kyrmina",
+         "DESI":"Hello, we build things",
+         "DESII":" This is a Bootstrap 4 based template, helping you to build modern and beautiful websites ",
+         "PRODUCT":"Products",
+         "ABOUT":"About",
+         "ABOUTDES":" This describes what we do and what is our mission. At right you can see the awesome people behind. Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit. Maecenas a sem ultrices neque vehicula fermentum a sit amet nulla. ",
+         "CONTACT":"Contact",
+         "CONTACTMSG":"If you have questions or just want to get in touch , use the from. We look forward to hearing from you! ",
+         "ADDRESSTITLE":"Address",
+         "CALL":"Call",
+         "EMAIL":"Email",
+         "SEND":"Send Now",
+         "WRITEMSG":"Write Message",
+         "NAME":"Name",
+         "MSG":"Message",
+         "MOREDETAILS":"More Details"
+     },
+     "ABOUT":{
+        "ABOUT":"About Us",
+        "KYRMINA":"KYRMINA",
+        "TITLE":"FOR RUBBER PRODUCTS.",
+        "WHOTITLE":"who we are",
+        "WHATTITLE":"what we do",
+        "SCROLL":"Scroll"
+    },
+    "CONTACT":{
+        "CONTACT":"Contact",
+        "WELCOME":"WELCOME",
+        "TOKYRMINA":"TO KYRMINA",
+        "SCROLL":"Scroll",
+        "OREMAIL":"OR Email us here",
+        "LOCATIONS":"LOCATIONS",
+        "GETINTOUCH":"GET IN TOUCH"
+    },
+    "PRODUCT":{
+        "EXPLORE":"Explore Product"
+    }
+
+}
+
