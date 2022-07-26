@@ -1,7 +1,10 @@
 {
+    "HEAD":{
+        "TITLE":"Kyrmina For Rubber Products"
+    },
     "NAVBAR":{
         "COMPANY":"kyrmina",
-        "COMPDES":"Rubber&Plastic",
+        "COMPDES":"For Rubber Products",
         "HOME":"Home",
         "ABOUT":"About",
         "PRODUCT":"Products",
@@ -34,7 +37,7 @@
      "ABOUT":{
         "ABOUT":"About Us",
         "KYRMINA":"KYRMINA",
-        "TITLE":"FOR RUBBER & PLASTIC.",
+        "TITLE":"FOR RUBBER PRODUCTS.",
         "WHOTITLE":"who we are",
         "WHATTITLE":"what we do",
         "SCROLL":"Scroll"

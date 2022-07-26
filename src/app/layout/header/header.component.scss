@@ -8,19 +8,24 @@
     position: fixed;
     z-index: 5;
 }
+.compCont{
+  display: flex;
+}
 .LogoName{
-    margin-left: -11%;
+  margin-left: -2%;
+  margin-top: 0.5%;
 }
 
 .CompanyName{
     font-family: 'Reem Kufi', sans-serif;
+
     color: white;
     font-size: 50px;
     font-weight: 600;
     letter-spacing: 14px;
 
     color: white;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 600;
     letter-spacing: 0px;
     margin-left: -3%;
@@ -30,7 +35,7 @@
 .FieldName{
     font-family: "Reem Kufi", sans-serif;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     letter-spacing: 0px;
     margin-left: -3%;
@@ -38,10 +43,15 @@
     font-weight: 700;
 }
 .LogoDiv{
-    width: 44%;
-    margin-left: 16%;
-    margin-top: -6%;
-    background: white;
+  width: 60%;
+  margin-left: 16%;
+  margin-top: -6%;
+  background: white;
+  border: 2px solid black;
+  cursor: pointer;
+  box-shadow: 0px 0px 14px 0px rgb(255 255 255 / 50%);
+    -webkit-box-shadow: 0px 0px 14px 0px rgb(255 255 255 / 50%);
+    -moz-box-box-shadow: 0px 0px 14px 0px rgba(255, 255, 255, 0.5);
 }
 
 .quotebtn{
@@ -94,7 +104,7 @@ li:hover li::after{
     overflow-x: hidden;
     transition: 0.5s;
   }
-  
+
   .overlay-content {
     position: relative;
     /* top: 25%; */
@@ -103,7 +113,7 @@ li:hover li::after{
    /*  text-align: center; */
     /* margin-top: 30px; */
   }
-  
+
   .overlay a {
     padding: 0px 11% 0% 6%;
     text-decoration: none;
@@ -114,12 +124,13 @@ li:hover li::after{
     transition: 0.3s;
     margin-top: 2%;
     font-weight: bold;
+    cursor: pointer;
   }
-  
+
   .overlay a:hover, .overlay a:focus {
     color: #037FD5;
   }
-  
+
   .overlay .closebtn {
     position: absolute;
     top: 20px;
@@ -166,7 +177,7 @@ select {
   .select {
     position: relative;
     display: flex;
-    width: 78%;
+    width: 87%;
     height: 40px;
     line-height: 2;
     background-color: transparent;
@@ -181,6 +192,7 @@ select {
     color: white;
     cursor: pointer;
     background-color: transparent;
+    text-align: start;
   }
   /* Arrow */
   .select::after {
@@ -277,7 +289,7 @@ select {
     width: 34px;
     left: 0;
  }
- 
+
 
  .menu.active .nav ul {
   display: block;
@@ -298,13 +310,10 @@ select {
   .menu.active .nav-tgl > span:before {
     transform: rotate(45deg);
  }
- 
+
  ::ng-deep{
   .rtl{
     .LogoDiv{
-      width: 44%;
-      /* margin-right: 16%;
-      margin-left: unset; */
       margin-top: -6%;
       background: white;
     }
@@ -313,12 +322,22 @@ select {
     }
   }
  }
+
+ ::ng-deep .rtl{
+   select{
+     text-align: end;
+   }
+ }
  @media only screen and (min-width: 1600px) {
-   
+
     .LogoDiv {
       margin-left: 16%;
       margin-top: -4%;
+      width: 69%;
     }
+    .LogoName{
+      margin-left: 0%;
+  }
     .CompanyName {
       font-size: 31px;
     }
@@ -362,4 +381,71 @@ select {
     text-decoration: none;
     font-size: 100px;
     }
+ }
+
+ @media screen and (max-width: 992px){
+  .minmarginTop {
+    margin-top: 1%;
+   }
+   .select {
+    width: 69%;
+    height: 40px;
+    margin-left: 2%;
+  }
+  .nav-tgl {
+    top: -38px;
+  }
+  ::ng-deep{
+     .rtl .nav-tgl {
+          left: 0;
+          right: unset;
+      }
+      .rtl .select {
+        margin-right: 4%;
+    }
+  }
+
+ }
+ @media screen and (max-width: 770px){
+
+  ::ng-deep {
+    .rtl{
+    .nav-tgl {
+    left: 0;
+    right: unset;
+    }
+    .select{
+      margin-right: 4%;
+    }
+   }
+  }
+
+  .compCont {
+    display: flex;
+    justify-content: center;
+  }
+  .minmarginTop {
+    margin-top: 3%;
+ }
+ .select {
+  width: 70%;
+  height: 40px;
+  margin-left: 4%;
+ }
+   .wrapper h1 {
+    font-size: 43px;
+   }
+   .BurgerMenu {
+    padding-top: 6%;
+   }
+   .nav-tgl {
+    top: -37px;
+   }
+   .overlay a{
+    font-size: 53px;
+    line-height: 1.5;
+   }
+   .RouterLinks{
+    padding-top: 44%;
+}
  }

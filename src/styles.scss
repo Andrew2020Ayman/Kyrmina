@@ -4,7 +4,7 @@
 body{
     scroll-behavior: smooth;
     height: 100%;
-   
+
 }
 html {
     scroll-behavior: smooth;
@@ -31,9 +31,9 @@ html {
     }
     .LogoName{
       text-align: initial;
-      margin-right: -4%;
+      margin-right: -1%;
      }
-   
+
      &::ng-deep {
         .slick-dots {
           right: 96%  !important;
@@ -44,7 +44,7 @@ html {
       float: right !important;
     }
 
-    .prevBtn{ 
+    .prevBtn{
       direction: ltr;
        .arrowprevDiv {
           direction: ltr;
@@ -62,7 +62,7 @@ html {
        }
     }
   }
-  
+
   ::ng-deep .slick-dots{
     left: 21px  !important;
   }
@@ -81,13 +81,13 @@ html {
     border-radius: 10px;
     width: 4px;
   }
-  
+
  ::-webkit-scrollbar
   {
     width: 8px;
     background-color: #cfc8c8;
   }
-  
+
  ::-webkit-scrollbar-thumb
   {
     border-radius: 10px;
@@ -98,4 +98,3 @@ html {
                        color-stop(0.72, rgb(148, 149, 150)),
                        color-stop(0.86, rgb(225, 227, 230)));
   }
-  

@@ -10,7 +10,7 @@ body{
 }
 
 p{
-	margin: 0 0 20px 0;	
+	margin: 0 0 20px 0;
 }
 
 p, ul{
@@ -43,7 +43,7 @@ h2{
 }
 
 .float-left{
-	float: left;	
+	float: left;
 	margin: 0 0 0 20px;
 }
 
@@ -65,7 +65,7 @@ h2{
 }
 
 #nav li{
-	margin: 0 0 20px 0;	
+	margin: 0 0 20px 0;
 }
 
 #header, #intro, #second{
@@ -103,7 +103,7 @@ h2{
 	background: url(https://ianlunn.co.uk/plugins/jquery-parallax/images/thirdBG.jpg) 50% 0 no-repeat fixed;
 	color: white;
 	height: 650px;
-	padding: 100px 0 0 0;	
+	padding: 100px 0 0 0;
 }
 
 #fifth{
@@ -123,7 +123,7 @@ h2{
 .story .float-left, .story .float-right{
 	padding: 100px 0 0 0;
 	position: relative;
-	width: 350px;	
+	width: 350px;
 }
 
 
@@ -142,7 +142,7 @@ h2{
 	position: relative;
 	z-index: 4;
 }
-	
+
 .noise:before{
 	content: "";
 	position: absolute;
@@ -156,13 +156,21 @@ h2{
 
 
 .noisy {
-/* 	background-image: url(data:image/png;base64,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);  
- */background-image: url('../../../../assets/noisy-texture-300x300-o3-d10-c-111111-t0.png');    
-} 
+/* 	background-image: url(data:image/png;base64,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);
+ */background-image: url('../../../../assets/noisy-texture-300x300-o3-d10-c-111111-t0.png');
+}
 
 .myslider1 , .myslider2 , .myslider3 , .item{
    outline: none;
    border: none;
+}
+
+.myslider1{
+	position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+	overflow: hidden;
 }
 
 .circleClass{
@@ -173,51 +181,72 @@ h2{
     border-radius: 50%;
     top: -22%;
 	text-align: center;
+	z-index: 3;
 }
-.imgDiv{
+
+.itemClass{
+	position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
+ .imgDiv{
 	justify-content: center;
     display: flex;
     position: relative;
-    margin-top: 22%;
+    /* margin-top: 22%; */
+    height: 100%;
 
 	.ProductImg{
-     width: 450px !important;
-    height: 450px !important;
-    object-fit: cover !important;
-    border-radius: 50% !important;
+		width: 100%;
+		height: 100% !important;
+		/* border-radius: 50% !important; */
+		object-fit: cover;
+    position: relative;
 	}
 	.overlayImg{
-		width: 450px;
+		width: 100%;
 		height: 100%;
 		position: absolute;
-		background-color: rgba(0,0,0,0.5);
-		border-radius: 50%;
+		background-color: rgba(0, 0, 0, 0.5);
+		/* border-radius: 50%; */
 		z-index: 5;
 
 	}
-	
+
 }
+
 
 
 
 .myslider2{
 
-       margin-top: -25%;
-   
+	margin-top: 21%;
+    position: absolute;
+    height: 55%;
+    width: 100%;
+    z-index: 3;
+       overflow: hidden;
 	.ProductDetails{
 		position: relative;
 		margin-top: 0;
-		z-index: 2222;
+		margin: 0 auto;
 		h1{
 			color: white;
 			font-family: 'Cinzel', serif;
-			font-size: 65px;
+			font-size: 59px;
 			letter-spacing: 8px;
 		}
-	}	
+	}
 }
 .slick-active .ProductDetails h1{
-	
+
 	-webkit-animation: textanimation 0.8s 1 ease-in-out forwards;
 	animation: textanimation 0.8s 1 ease-in-out forwards;
 }
@@ -237,7 +266,7 @@ h2{
         -o-transform: translatex(0);
         transform: translatex(0);
     }
-  
+
 }
 @-webkit-keyframes textanimation{
 	from {
@@ -256,7 +285,7 @@ h2{
     }
 }
 .exploreBtn{
-	margin-top: 19%;
+	margin-top: 15%;
     padding: 1% 4%;
     border: 2px solid white;
     border-radius: 30px;
@@ -274,13 +303,13 @@ h2{
 
 .slideNum{
 	position: absolute;
-    right: -1%;
+    right: 0%;
     bottom: 8%;
     color: white;
     width: 200px;
     text-align: center;
-
-  font-family: 'Vollkorn', serif;
+	font-family: 'Vollkorn', serif;
+	z-index: 3;
 	.slideitem{
 		text-align: left;
     color: white;
@@ -294,15 +323,15 @@ h2{
 		width: 142px;
     height: 2px;
     transform: rotateZ(134deg);
-    background: #7a7a7a;
+    background: rgb(255,255,255,0.8);
 	margin-right: 26%;
 	}
 	.AllSlide{
-     color: #7a7a7a;
+     color: rgb(255,255,255,0.8);
 	 font-size: 35px;
 	}
 
-	
+
 }
 
 .slick-active .slideitem{
@@ -349,11 +378,11 @@ h2{
 .btn-4 {
 	overflow: hidden;
 	position: relative;
-	
+
 	span {
 	  z-index: 20;
 	}
-	
+
 	&:after {
 	  background: #fff;
 	  content: "";
@@ -368,24 +397,24 @@ h2{
 	  z-index: -10;
 	}
   }
-  
+
   .btn-4:hover {
-	
+
 	&:after {
 	  left: 120%;
 	  transition: all 550ms cubic-bezier(0.19, 1, .42, 1);
 	}
   }
-  
+
 
 ::ng-deep .prevBtn{
 	z-index: 50;
 		opacity: 0;
 		position: absolute;
 		left: 0;
-		top: 65%;
+		top: 0%;
 		float: left;
-		margin-left: -5.3em;
+		margin-left: 6.7em;
 		width: 60px;
 		height: 60px;
 		border: 1px solid white;
@@ -456,10 +485,9 @@ h2{
 		z-index: 50;
 		position: absolute;
 		right: 0;
-		top: 65%;
-		
+		top: 0%;
 		float: right;
-		margin-right: -5.3em;
+		margin-right: 6.7em;
 		width: 60px;
 		height: 60px;
 		border: 1px solid white;
@@ -520,7 +548,7 @@ h2{
 		}
 	}
 
-	.item img  {
+	/* .item img  {
 		width: 100%;
 		-webkit-transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
 		transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
@@ -532,8 +560,8 @@ h2{
 				transform: scale(0.7);
 		-webkit-animation: cssAnimation 4s 1 ease-in-out forwards;
 		animation: cssAnimation 4s 1 ease-in-out forwards;
-	  }
-	  
+	  } */
+
 @keyframes cssAnimation {
 	from {
 		transform: scale(0.7) translate(0px);
@@ -572,6 +600,220 @@ h2{
 		}
 	}
 }
+
+@media only screen and (min-width: 1600px) {
+	.circleClass{
+		width: 1300px;
+		height: 1300px;
+	}
+	.imgDiv{
+		.ProductImg{
+
+		}
+		.overlayImg{
+
+		}
+
+	}
+	.myslider2{
+
+	 .ProductDetails{
+		 h1{
+			 font-family: 'Cinzel', serif;
+			 font-size: 80px;
+		 }
+	 }
+ }
+ .exploreBtn {
+  padding: 1% 4%;
+  font-size: 18px;
+  }
+  ::ng-deep .prevBtn {
+    left: 0;
+    /* top: 63%; */
+    margin-left: 10.7em;
+    width: 70px;
+    height: 70px;
+
+	.arrowprevDiv {
+		height: 32px;
+		width: 68px;
+		margin-left: 13%;
+		margin-top: 30%;
+
+		.left {
+      width: 114%;
+			height: 3px;
+			left: 19px;
+		}
+		.leftTri {
+			border-width: 9px 0 9px 10px;
+			top: 50%;
+			left: 20%;
+			}
+	}
+	&:hover{
+		.arrowprevDiv {
+			margin-left: 0%;
+			margin-top: 44%;
+		.left{
+			height: 3px;
+		}
+
+		}
+	}
+  }
+ ::ng-deep .nextBtn{
+	width: 70px;
+	height: 70px;
+  margin-right: 10.7em;
+	.arrownextDiv{
+		height: 32px;
+		width: 68px;
+		margin-left: -62%;
+		margin-top: 30%;
+	}
+	.right{
+    height: 3px;
+    right: 20px;
+    width: 114%;
+	}
+	.triangle{
+		border-width: 9px 0 9px 10px;
+		top: 50%;
+		left: 78%;
+	}
+	&:hover{
+		.arrownextDiv {
+			margin-left: -6px;
+             margin-top: 46%;
+		.right{
+			height: 3px;
+			right: 14px;
+		}
+
+		}
+	}
+}
+
+.slideNum .slideitem {
+    font-size: 90px;
+	margin-left: 15%;
+}
+.slideNum .AllSlide {
+    font-size: 50px;
+}
+
+}
+
+@media screen and (max-width: 992px){
+  .imgDiv .ProductImg {
+    width: 100%;
+    height: 100vh !important;
+    object-fit: cover;
+    object-position: 43%;
+  }
+
+  .circleClass {
+    width: 800px;
+    height: 800px;
+  }
+  .myslider2 {
+    margin-top: 41% !important;
+  }
+  .ProductDetails h1 {
+    font-size: 39px !important;
+  }
+
+  ::ng-deep {
+    .prevBtn {
+      left: 5%;
+      top: 16%;
+    }
+    .nextBtn {
+        right: 5%;
+        top: 16%;
+    }
+  }
+  .slideNum {
+    right: -4%;
+    bottom: 5%;
+  }
+
+}
+
+@media only screen and (max-width: 770px){
+  .imgDiv .ProductImg {
+    width: 100%;
+    height: 100vh !important;
+    object-fit: cover;
+    object-position: 43%;
+  }
+  .myslider2 .ProductDetails {
+    margin-top: 90% !important;
+   }
+   .myslider2 .ProductDetails h1 {
+    font-size: 23px;
+   }
+   .exploreBtn {
+    margin-top: 25%;
+    padding: 4% 6%;
+    font-size: 13px;
+ }
+ .slideNum {
+  right: -12%;
+  bottom: 3%;
+  }
+
+  .slideNum .slideitem {
+    text-align: unset;
+    color: white;
+    font-size: 65px;
+    margin-left: unset;
+}
+.slideNum .slideline {
+   display: none;
+ }
+ .slideNum .AllSlide {
+  display: none;
+ }
+ .circleClass{
+  border: 0.01em solid rgba(145, 144, 144, 0.63);
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  top: 26%;
+  text-align: center;
+  z-index: 3;
+}
+.myslider2{
+  margin-top: 20%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  overflow: hidden;
+}
+
+::ng-deep{
+  .prevBtn {
+  left: -14%;
+  top: 33%;
+  float: left;
+}
+.nextBtn {
+  z-index: 50;
+  position: absolute;
+  right: -37px;
+  top: 33%;
+}
+}
+
+}
+
+
+
 
 
 /* #eeece6 */

@@ -1,8 +1,59 @@
-
  <div class="product noisy" *ngIf="fetchData">
-      <div class="circleClass" [dir]="boolDR">
 
-		<!-- <ng-container *ngIf="owl"> 
+
+
+      <div class="circleClass"> </div>
+
+
+	  <div class="itemClass">
+
+		<div class="myslider1 asnavForClass " id="slider1" >
+			<div class="item" *ngFor="let slide of productImages;let i = index">
+				<div class="imgDiv" >
+					<div class="overlayImg"></div>
+					<img [src]="slide.image" alt="slide" class="ProductImg">
+				</div>
+			</div>
+		  </div>
+		  <div class="myslider2 asnavForClass" id="slider2" >
+			<div class="item" *ngFor="let slide of productImages;let i = index">
+				<div class="ProductDetails" *ngIf="changelngServ.local_lenguage == 'en'">
+					<h1> {{slide.titleEn}} </h1>
+				</div>
+				<div class="ProductDetails" *ngIf="changelngServ.local_lenguage == 'ar'">
+					<h1> {{slide.title}} </h1>
+				</div>
+
+				<a class="btn btn-4 exploreBtn" (click)="GoToProduct(i)"><span> {{'PRODUCT.EXPLORE' | translate}} </span></a> 
+			</div>
+	  </div>
+
+	  </div>
+	  <div class="slideNum">
+		<div class="myslider3 asnavForClass" id="slider3">
+			<div class="item" *ngFor="let slide of productImages;let i = index">
+				<div class="slideitem" *ngIf="changelngServ.local_lenguage == 'ar'">
+					 {{slide.ArId}}  
+				</div>
+				<div class="slideitem" *ngIf="changelngServ.local_lenguage == 'en'">
+					{{slide.id}} 
+			   </div>
+			</div>
+			
+			</div>  
+		
+	  <div class="slideline"></div>
+		<div class="AllSlide"> {{ slidesLen }} </div>
+	</div>
+		
+
+
+	 
+	
+ </div> 
+
+
+ <!-- <ng-container *ngIf="owl"> 
 			<owl-carousel-o [options]="customOptions" #owlCar (translated)="getPassedData($event)">
 			   <ng-container *ngFor="let slide of productImages;let i = index">
 					 <ng-template  carouselSlide [id]="slide.id" id="owl-slide-1" dataHash="temp">
@@ -36,53 +87,10 @@
 			</p>
 
 		 </ng-container> -->
-
-		 <!-- ---------------------- -->
-		 
-		 <div class="myslider1 asnavForClass " id="slider1" >
-			<div class="item" *ngFor="let slide of productImages;let i = index">
-				<div class="imgDiv" >
-					<div class="overlayImg"></div>
-					<img [src]="slide.image" alt="slide" class="ProductImg">
-				</div>
-			</div>
-		  </div>
-		  <div class="myslider2 asnavForClass" id="slider2" >
-			<div class="item" *ngFor="let slide of productImages;let i = index">
-				<div class="ProductDetails" >
-					<h1> {{slide.title}} </h1>
-				</div>
-
-				<a class="btn btn-4 exploreBtn" (click)="GoToProduct(i)"><span> {{'PRODUCT.EXPLORE' | translate}} </span></a> 
-			</div>
-	  </div>
-		  
-		  
-
-		 <!-- ---------------------- -->
-		
-	  </div>
-
-
-	  <div class="slideNum" [dir]="boolDR" >
-		<div class="myslider3 asnavForClass" id="slider3">
-			<div class="item" *ngFor="let slide of productImages;let i = index">
-				<div class="slideitem"> {{slide.id}}  </div>
-			</div>
-			
-			</div>  
-		
-	  <div class="slideline"></div>
-		<div class="AllSlide"> {{ productImages.length }} </div>
-	</div>
-
-
-
-	  <!-- <div class="slideNum">
+ <!-- <div class="slideNum">
 		  <div class="slideitem"> {{ slidenum+1 }} </div>
 		<div class="slideline"></div>
 		  <div class="AllSlide">4</div>
 	  </div> -->
-	
- </div>
+		 <!-- ---------------------- -->
 

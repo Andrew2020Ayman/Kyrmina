@@ -13,9 +13,9 @@ const routes :Routes =[
       {path:'About',component:AboutComponent},
       {path:'Product',component:ProductsComponent},
       {path:'Productitem/:id',component:ProductItemComponent},
-      {path:'Contact',component:ContactComponent}
-    
+      {path:'Contact',component:ContactComponent},
 
+      
 ]
 
 @NgModule({
@@ -24,4 +24,13 @@ const routes :Routes =[
 })
 export class AppRoutingModule {
 
+  
 }
+
+/* 
+{path:'Home-en',component:HomeComponent},
+      {path:'About-en',component:AboutComponent},
+      {path:'Product-en',component:ProductsComponent},
+      {path:'Productitem-en/:id',component:ProductItemComponent},
+      {path:'Contact-en',component:ContactComponent}
+*/

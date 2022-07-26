@@ -85,6 +85,7 @@ background: linear-gradient(90deg, rgba(0,0,0,0.896796218487395) 0%, rgba(0,0,0,
 }
 
 .scrollComp {
+  cursor: pointer;
   padding-top: 70px;
   position: absolute;
   margin-top: 4%;
@@ -176,12 +177,13 @@ background: linear-gradient(90deg, rgba(0,0,0,0.896796218487395) 0%, rgba(0,0,0,
     }
   }
 
-  form input:not(.submit-btn), form textarea, form select {
+  form .form-group input:not(.submit-btn), form textarea, form select {
   width: 100%;
   padding: 15px 15px;
   border: 1px solid rgba(0,0,0,.3);
   margin-bottom: 25px;
   font-size: 18px;
+  height: 50px;
 }
 form textarea {
   width: 100%;
@@ -207,7 +209,7 @@ form textarea {
 }
 
   .titlePart{
-    padding: 0% 7%; 
+    padding: 0% 7%;
   }
 
   .locationtxt{
@@ -276,7 +278,7 @@ form textarea {
     }
     }
     .wrapper .scrollComp {
-      right: 12% ;
+      right: 17% ;
       font-family: 'El Messiri';
     }
     .scrollComp {
@@ -284,9 +286,9 @@ form textarea {
     }
 
     .formSec{
-      .textPart{ 
+      .textPart{
         padding:  0% 7%;
-    
+
         h1{
           font-family: 'Cairo' !important;
           text-align: start !important;
@@ -299,7 +301,7 @@ form textarea {
         h4{
           text-align: start !important;
         }
-    
+
         .parTxt{
             text-align: start;
           .mobileIcon{
@@ -307,8 +309,8 @@ form textarea {
           }
         }
       }
-    
-     
+
+
     .btn {
       position: relative;
       font-family: "Gotham-Medium","Helvetica Neue",sans-serif;
@@ -349,10 +351,10 @@ form textarea {
 @media only screen and (min-width: 1600px) {
   .wrapper {
     p.eyebrow {
-    font-size: 28px;
+    font-size: 28px !important;
   }
   h1 {
-    font-size: 90px;
+    font-size: 90px !important;
   }
 
  }
@@ -365,9 +367,13 @@ form textarea {
       padding: 0% 30% 10% 2%;
       font-size: 21px;
      }
+
+    }
+    form input:not(.submit-btn), form textarea, form select {
+      font-size: 22px;
     }
     .btn {
-      font-size: 17px;
+      font-size: 18px;
     }
  }
  .locationtxt {
@@ -383,5 +389,48 @@ form textarea {
   }
   .mapSec h4 {
     font-size: 21px;
+    bottom: -6%;
   }
+}
+
+@media only screen and (max-width: 770px){
+  .wrapper {
+    top: 52%;
+  }
+  .wrapper h1 {
+    font-size: 48px;
+  }
+  img {
+    object-fit: cover;
+    object-position: 27% -6px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotateY(179deg);
+  }
+  .row {
+    width: 100%;
+    margin: 0 auto;
+}
+.formSec .textPart {
+  padding: 0% 7%;
+  text-align: center;
+}
+.formSec .textPart .msgTxt {
+  padding: 5%;
+  font-size: 17px;
+  margin-top: 6%;
+}
+.form {
+  text-align: center;
+}
+.formSec .textPart .parTxt {
+  font-size: 26px;
+  text-align: justify;
+  padding: 0% 6%;
+}
+
 }

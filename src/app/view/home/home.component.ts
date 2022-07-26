@@ -1,7 +1,14 @@
 import { AfterViewChecked, AfterViewInit, Component, DoCheck, HostListener, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CarouselComponent, OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
-import { HomeService } from 'src/app/core/sharedServices';
+import { ChangeLangService, HomeService } from 'src/app/core/sharedServices';
+import { Location } from '@angular/common';
+
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { CarouselService } from 'ngx-owl-carousel-o/lib/services/carousel.service';
+import { Router } from '@angular/router';
 
 
 declare var $:any;
@@ -12,41 +19,14 @@ declare var $:any;
 })
 export class HomeComponent implements OnInit  {
 
-  @ViewChild('owlCar') carouselEl: CarouselComponent;
-  
+ @ViewChild('owlCar') carouselEl: CarouselComponent;
+
+  EmailForm: FormGroup;
+
   /* ----------variables ------------- */
   transBool = true;
   fetchData = true;
-  customOptions: any = {
-    rtl:this.rtl_slick(),
-    loop: false,
-    dots: true,
-    autoplay: false,
-    autoplaySpeed: false,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    items: 2,
-    margin:8,
-    autoWidth:true,
-    autoHeight: true,
-    responsiveRefreshRate: 500,
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      740: {
-        items: 2
-      },
-      940: {
-        items: 2
-      }
-    }
-  };
-  customOptionsAr: any = {
+  customOptions: OwlOptions = {
     rtl:true,
     loop: false,
     dots: true,
@@ -75,38 +55,7 @@ export class HomeComponent implements OnInit  {
       }
     }
   };
-  customOptionsII: any = {
-     rtl:this.rtl_slick(),
-    loop: true,
-    dots: false,
-    autoplay: false,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    items: 1,
-    nav:true,
-    margin:8,
-    autoWidth:true,
-    autoHeight: true,
-    responsiveRefreshRate: 500,
-
-    navText: [ '<div class="owlPrev"></div>', '<div class="owlNext"></div>' ],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 1
-      },
-      740: {
-        items: 1
-      },
-      940: {
-        items: 1
-      }
-    }
-  };
- customOptionsIII: any = {
+  customOptionsII: OwlOptions = {
     rtl:true,
     loop: true,
     dots: false,
@@ -160,7 +109,7 @@ export class HomeComponent implements OnInit  {
       id:4,
       image:"../../../assets/about/Westlandwerodampweb-1.png"
     }
-    
+
   ]
   productImages=[
     {
@@ -194,40 +143,41 @@ export class HomeComponent implements OnInit  {
   owl:boolean = true;
   @HostListener('window:resize', ['$event'])
   onResize(event) {
+    //this.load();
     this.owl = false;
     setTimeout(() => {
       this.owl = true;
-    }, 5);
+    }, 10);
   }
   /* ---------------------------------- */
-  constructor(public translate:TranslateService,private homeServ:HomeService) {}
+  constructor( public translate:TranslateService,
+               private homeServ:HomeService,
+               private changelngServ:ChangeLangService,
+               private location: Location,
+               private toastr: ToastrService ,
+               private fb : FormBuilder,
+               public router:Router) {
+  }
 
-   rtl_slick(){
-    if ($('body').hasClass("rtl")) {
-       return true;
-    } else {
-       return false;
-    }}
+  load() {
+    location.reload()
+  }
 
+  createEmailForm(){
+    this.EmailForm = this.fb.group({
+      from_name:['',Validators.required],
+      form_email:['',Validators.required],
+      message:['',Validators.required]
+    });
+  }
   ngOnInit(): void {
 
-    this.getData(()=>{
-      this.fetchData = true;
-    });
-  this.translate.onLangChange.subscribe(res=>{
-      let currLang = this.translate.currentLang;
-    if(currLang == 'ar'){
-      $('owl-carousel-o').addClass('owl-rtl');
-      $('owl-carousel-o div').addClass('owl-rtl');
-      this.transBool = true;
-    }else{
-      this.transBool = false;
-      $('owl-carousel-o').removeClass('owl-rtl');
-      $('owl-carousel-o div').removeClass('owl-rtl');
-    } 
+   this.createEmailForm();
+
+  this.getData(()=>{
+    this.fetchData = true;
   });
 
-  
     /* --------mouse move---------- */
     $(document).ready(function() {
       var movementStrength = 25;
@@ -259,7 +209,7 @@ export class HomeComponent implements OnInit  {
     verticalSwiping: true,
     draggable:false,
     cssEase: 'ease-in-out',
-    speed:500    
+    speed:500
     });
 
     function mouseWheel($slider) {
@@ -274,7 +224,7 @@ export class HomeComponent implements OnInit  {
       }
       else {
         $slider.slick('slickPrev')
-       
+
       }
     }
 
@@ -285,11 +235,41 @@ export class HomeComponent implements OnInit  {
 }
 
 getData(callback){
-  this.HomeData = this.homeServ.getHomeData();
-   this.AboutData = this.homeServ.getAboutData();
+
+    this.HomeData = this.homeServ.getHomeData();
+    this.AboutData = this.homeServ.getAboutData();
    this.ProductsData = this.homeServ.getProductData();
    this.ContactData = this.homeServ.getContactData();
    callback();
 }
 
+scrollFunc(){
+  const $slider = $(".myslider");
+  $slider.slick('slickNext');
+}
+
+
+ serviceID = 'default_service';
+ templateID = 'template_wxfzprf';
+ publicKey = 'pIZ0I9ba-VpinU8qV';
+
+public sendEmail(e: Event) {
+  if(this.EmailForm.valid){
+
+    e.preventDefault();
+  emailjs.sendForm(this.serviceID, this.templateID, e.target as HTMLFormElement, this.publicKey)
+    .then((result: EmailJSResponseStatus) => {
+      this.toastr.success('message sent successfully');
+      console.log('SUCCESS!',result.text);
+    }, (error) => {
+      this.toastr.error('message failed to send');
+      console.log(error.text);
+    });
+
+  }
+}
+
+GoToDetails(index){
+  this.router.navigateByUrl("Productitem/"+ index);
+}
 }

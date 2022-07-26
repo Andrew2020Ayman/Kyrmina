@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from 'src/app/core/sharedServices';
+import { ChangeLangService, ProductService } from 'src/app/core/sharedServices';
 
 @Component({
   selector: 'app-product-item',
@@ -11,8 +11,10 @@ export class ProductItemComponent implements OnInit {
   fetchData=false;
   Arabicproduct=[];
   productData;
-  constructor(private prodServ:ProductService,private route: ActivatedRoute) {
-   
+  constructor(private prodServ:ProductService,
+              private route: ActivatedRoute,
+              private changelngServ:ChangeLangService) {
+
    }
 
   ngOnInit(): void {
@@ -22,7 +24,7 @@ export class ProductItemComponent implements OnInit {
     console.log("done");
     this.productData = this.Arabicproduct[productIndex];
     console.log(this.productData);
-    
+
   })
   }
 

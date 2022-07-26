@@ -1,9 +1,9 @@
 <div class="about">
 
-     <div class="videoPart " id="video">
+     <section class="videoPart " id="video">
         <div class="overlay"></div>
         <video  autoplay="autoplay" loop="loop" [muted]="'muted'">
-            <source  src="../../../assets/aboutVideo.mp4" type="video/mp4">
+            <source  src="../../../assets/vidOne.mp4" type="video/mp4">
         </video>
 
           <div class="wrapper">
@@ -13,20 +13,75 @@
                 {{'ABOUT.TITLE' | translate}}</h1>
             </div>
             <p> {{'ABOUT.ABOUTDES' | translate}} .</p>
-            <a href="About#Who" class="scrollComp"><span></span>{{'ABOUT.SCROLL' | translate}}</a>
-            
+            <a  (click)="scrollFunc()" class="scrollComp"><span></span>{{'ABOUT.SCROLL' | translate}}</a>
+
           </div>
 
-     </div>
+     </section>
 
-     <section class="WhoPart " id="Who">
+     <section id="Who">
+        <div class="bg-dark-05">
+            <div class="container">
+            <div class="nk-gap-4"></div>
+            <div class="row">
+            <div class="col-lg-3 offset-lg-1">
+            <div class="text-gray QuesText textJust" >{{'ABOUT.WHOTITLE' | translate}}</div>
+            </div>
+            <div class="col-lg-7 AnsText">
+            <h2 class="whiteColor lh-35 textJust" *ngIf="changelngServ.local_lenguage == 'ar'">  {{WhoDes}} </h2>
+            <h2 class="whiteColor lh-35 textJust" *ngIf="changelngServ.local_lenguage == 'en'">  {{whoDesEn}} </h2>
+            </div>
+            </div>
+            <div class="nk-gap-4"></div>
+            </div>
+            </div>
+     </section>
+
+     <section>
+        <div class="bg-dark-04">
+            <div class="container">
+            <div class="nk-gap-4"></div>
+                <div class="row">
+                <div class="col-lg-3 offset-lg-1">
+                <div class="text-gray QuesText textJust">{{'ABOUT.WHATTITLE' | translate}}</div>
+                </div>
+                <div class="col-lg-7 AnsText">
+                <h2 class="whiteColor textJust" *ngIf="changelngServ.local_lenguage == 'ar'">{{WhatDes}}</h2>
+                <h2 class="whiteColor textJust" *ngIf="changelngServ.local_lenguage == 'en'">{{WhatDesEn}}</h2>
+                <ul *ngIf="changelngServ.local_lenguage == 'ar'">
+                    <li class="whiteColor listText textJust" *ngFor="let Item of whatList"> {{Item}} </li>
+                </ul>
+
+                <ul *ngIf="changelngServ.local_lenguage == 'en'">
+                    <li class="whiteColor listText textJust" *ngFor="let Item of whatListEn"> {{Item}} </li>
+                </ul>
+                </div>
+                </div>
+            <div class="nk-gap-4"></div>
+            </div>
+        </div>
+
+     </section>
+
+
+</div>
+
+
+<!-- <app-loadingscreen> </app-loadingscreen> -->
+<app-footer [footerPostion]="1"></app-footer>
+
+
+<!--
+    <section class="WhoPart " id="Who" #Who>
          <h1 class="WhoTxt">{{'ABOUT.WHOTITLE' | translate}}</h1>
          <p class="WhoDes">
             {{WhoDes}}
          </p>
          <a href="About#what" class="scrollComp"><span></span>{{'ABOUT.SCROLL' | translate}}</a>
      </section>
-    <div class="WhatPart" id="what">
+
+
+      <section class="WhatPart" id="what">
         <h1 class="WhatTxt">{{'ABOUT.WHATTITLE' | translate}}</h1>
         <div class="row">
             <div class="col-sm-7">
@@ -39,15 +94,11 @@
                     <ul>
                         <li *ngFor="let Item of whatList"> {{Item}} </li>
                     </ul>
-                    
+
                 </div>
             </div>
         </div>
-        
-   </div>
 
-</div>
+   </section>
 
-
-<!-- <app-loadingscreen> </app-loadingscreen> -->
-<app-footer [footerPostion]="1"></app-footer>
+ -->

@@ -1,10 +1,11 @@
 <div class="prodItem" *ngIf="fetchData">
 
     <div class="headingDiv">
-       <h1> {{productData.title}} </h1> 
+       <h1 *ngIf="changelngServ.local_lenguage == 'en'"> {{productData.titleEn}} </h1>
+       <h1 *ngIf="changelngServ.local_lenguage == 'ar'"> {{productData.title}} </h1>
     </div>
     <div class="HLineDiv"></div>
-    
+
     <div class="ImgDiv">
         <img src={{productData.image}} alt="">
     </div>
@@ -12,11 +13,12 @@
     <div class="HLineDiv"></div>
 
     <div class="textDiv">
-        <div [innerHTML]="productData.Des"></div>
+        <div *ngIf="changelngServ.local_lenguage == 'en'" [innerHTML]="productData.EnDes"></div>
+        <div *ngIf="changelngServ.local_lenguage == 'ar'" [innerHTML]="productData.Des"></div>
     </div>
 
-    
+
 </div>
 <div class="noisy"></div>
 
-<app-footer [footerPostion]="1"></app-footer>
+<app-footer [footerPostion]="5"></app-footer>

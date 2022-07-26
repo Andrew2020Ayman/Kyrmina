@@ -2,99 +2,182 @@
     <div id="top-image"></div>
   <div class="myslider" id="slider">
 
-    <div class="item a">
+    <section class="item a" >
         <div class="row itemContent">
-          <div class="col-md-6 TxtCol">
-            <h1>{{HomeData.title}}</h1>
-            <h4>{{HomeData.DESI}}</h4>
-            <p>
-              {{HomeData.DESII}}
-            </p>
+          <div class="col-md-12 TxtCol">
+            <h1 *ngIf="changelngServ.local_lenguage == 'ar'">{{HomeData.Artitle}}</h1>
+            <h1 *ngIf="changelngServ.local_lenguage == 'en'">{{HomeData.title}}</h1>
 
-            <div class="btnDiv">
-              <a class="btn btn-circicon btn-primary">
-                <span class="icon">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-                <span class="text">{{'HOME.PRODUCT' | translate}}</span>
-              </a>
-            </div>
+            <h4  *ngIf="changelngServ.local_lenguage == 'ar'">{{HomeData.ArDESI}}</h4>
+            <h4  *ngIf="changelngServ.local_lenguage == 'en'">{{HomeData.DESI}}</h4>
+            <!-- <p>
+              {{HomeData.DESII}}
+            </p> -->
+
+            <a  (click)="scrollFunc()"  class="scrollComp"><span></span>{{'ABOUT.SCROLL' | translate}}</a>
           </div>
         </div>
-    </div>
-    <div class="item b">
+    </section>
+
+    <section id="About" class="item b">
        <div class="row itemContent">
-         <div class="col-md-6 TxtCol">
+         <div class="col-md-12 TxtCol">
           <h1> {{'HOME.ABOUT' | translate}}</h1>
-          <p>
-            {{AboutData.About}}
-          </p>
+          <p *ngIf="changelngServ.local_lenguage == 'ar'"> {{AboutData.ArAbout}} </p>
+          <p *ngIf="changelngServ.local_lenguage == 'en'"> {{AboutData.About}} </p>
          </div>
-         <!-- *ngIf="!transBool" -->
-         <div class="col-md-6 AboutSlide" dir="rtl">
-            <ng-container *ngIf="owl" >
-              <owl-carousel-o [options]="customOptions" 
-            >
-      
-            <ng-container *ngFor="let slide of AboutData.images">
-              <ng-template  carouselSlide [id]="slide.id">
-                <img [src]="slide.image" alt="slide">
-              </ng-template>
-            </ng-container>
-        
-          </owl-carousel-o>
-            </ng-container>
-            
-       
-          
-         </div>
-
         </div>
-       </div>
-    <div class="item c" id="product">
+        <div class="row itemContentI">
 
-        <div class="ProductList" dir="rtl">
-          
-          <!-- <div class="myslider2 " id="slider2">
-            <div class="item" *ngFor="let slide of productImages;let i = index">
-              <div class="imgDiv">
-                <img [src]="slide.image" alt="slide" class="ProductImg">
+          <!-- *ngIf="!transBool" -->
+          <div class="col-md-9 AboutSlide">
+             <ng-container *ngIf="owl">
+               <owl-carousel-o [options]="customOptions" >
+                  <ng-container *ngFor="let slide of AboutData.images">
+                    <ng-template  carouselSlide [id]="slide.id">
+                      <img class="AboutImg" [src]="slide.image" alt="slide">
+                    </ng-template>
+                  </ng-container>
 
-                <div class="ProductDetails">
-                  <h1> {{slide.title}} </h1>
-                  <p> {{slide.Des}} </p>
-                  <p>Details <span class="ArrowSpan"></span></p>
-                </div>
-              </div>
-            </div>
-            
-            </div> -->
+           </owl-carousel-o>
+             </ng-container>
 
-          <ng-container *ngIf="owl"> 
-             <owl-carousel-o
-              [options]="customOptionsII" >
-                <ng-container *ngFor="let slide of ProductsData">
+
+
+          </div>
+
+         </div>
+       </section>
+
+    <section class="item c" id="product" >
+
+        <div class="ProductList">
+
+          <ng-container *ngIf="owl">
+             <owl-carousel-o [options]="customOptionsII" >
+                <ng-container *ngFor="let slide of ProductsData;let i = index">
                       <ng-template  carouselSlide [id]="slide.id" >
-                        <div class="imgDiv">
-                          <img [src]="slide.image" alt="slide" class="ProductImg">
+                         <div class="row productRow">
+                          <div class="col-md-6" style="z-index: 3;">
+                            <div class="ProductDetails">
+                              <h1 *ngIf="changelngServ.local_lenguage == 'ar'"> {{slide.title}} </h1>
+                              <h1 *ngIf="changelngServ.local_lenguage == 'en'"> {{slide.titleEn}} </h1>
+                              <p *ngIf="changelngServ.local_lenguage == 'ar'"> {{slide.ArDes}} </p>
+                              <p *ngIf="changelngServ.local_lenguage == 'en'"> {{slide.EnDes}} </p>
+                              <p class="moreDetBtn" (click)="GoToDetails(i)">{{'HOME.MOREDETAILS' | translate}} <span class="ArrowSpan"></span></p>
 
-                          <div class="ProductDetails">
-                            <h1> {{slide.title}} </h1>
-                            <p> {{slide.Des}} </p>
-                            <p>{{'HOME.MOREDETAILS' | translate}} <span class="ArrowSpan"></span></p>
+                            </div>
                           </div>
-                        </div>
+
+                          <div class="col-md-6">
+                            <div class="imgDiv">
+                              <img [src]="slide.image" alt="slide" class="ProductImg">
+                            </div>
+                          </div>
+
+
+
+                         </div>
+
                       </ng-template>
                 </ng-container>
              </owl-carousel-o>
-          </ng-container> 
-        </div> 
+          </ng-container>
+        </div>
 
-       <!--  <div class="ProductList" *ngIf="transBool">
-          
-          <ng-container *ngIf="owl"> 
+
+    </section>
+
+    <section class="item d">
+      <div class="contactImg"> <i class="fas fa-phone-alt"></i> </div>
+       <!-- <img src="../../../assets/contact.png" class="contactImg"> -->
+
+      <div class="row contactDiv">
+           <div class="col-md-8 section_content">
+            <div class="anim-2">
+              <h1 class="display_title">{{'HOME.CONTACT' | translate}}</h1>
+              <p>{{'HOME.CONTACTMSG' | translate}}</p>
+            </div>
+<br>
+            <div class="row Contactrow">
+              <div class="col-12 col-md-6 col-lg-6">
+                <h4>{{'HOME.CONTACT' | translate}}</h4>
+                <p>{{'HOME.CALL' | translate}}: {{ContactData.MobileNum}} - {{ContactData.MobileNumI}}</p>
+                <p>{{'HOME.EMAIL' | translate}}: {{ContactData.Email}}</p>
+              </div>
+              <div class="col-12 col-md-6 col-lg-6">
+                <h4>{{'HOME.ADDRESSTITLE' | translate}}</h4>
+                <p class="AddressParg">
+                  {{ContactData.address}}
+                </p>
+              </div>
+            </div>
+
+           </div>
+           <div class="col-md-4 formSection">
+
+            <div class="section-aside aside-bottom anim small-relative">
+              <div class="message-form">
+                <h4>{{'HOME.CONTACT' | translate}}</h4>
+                <div class="form-container form-container-card">
+                  <!-- Message form container -->
+                  <form [formGroup]="EmailForm" class="send_message_form message form" (ngSubmit)="sendEmail($event)" id="message_form" novalidate="novalidate">
+                    <div class="form-group name">
+                      <input id="from_name" name="from_name" type="text" formControlName="from_name"
+                      [ngClass]="{'is-invalid': EmailForm.get('from_name').errors
+                            && EmailForm.get('from_name').touched}"
+                       placeholder="{{'HOME.NAME' | translate}}" class="form-control form-control-outline thick form-success-clean" aria-required="true">
+                      <div class="invalid-feedback">Please Enter your name.</div>
+                    </div>
+                    <div class="form-group email">
+                      <input id="form_email" type="email" placeholder="{{'HOME.EMAIL' | translate}}" name="form_email"
+                      formControlName="form_email"  placeholder="{{'HOME.EMAIL' | translate}}"
+                      [ngClass]="{'is-invalid': EmailForm.get('form_email').errors
+                            && EmailForm.get('form_email').touched}"
+
+                      class="form-control form-control-outline thick form-success-clean" aria-required="true">
+                      <div class="invalid-feedback">Please Enter your email</div>
+                    </div>
+                    <div class="form-group no-border">
+                      <textarea id="message" placeholder="{{'HOME.MSG' | translate}}" name="message" formControlName="message"
+                       class="form-control form-control-outline thick form-success-clean"aria-required="true"></textarea>
+
+                     <!--  <div>
+                        <p class="message-ok invisible form-text-feedback form-success-visible">Your message has been sent, thank you.</p>
+                      </div> -->
+                    </div>
+
+                    <div class="btns text-right">
+                      <button id="submit-message" type="submit" [disabled]="!EmailForm.valid" class="btn btn-outline-white btn-round btn-fullNot email_b" name="submit_message">
+                        <span class="txt">{{'HOME.SEND' | translate}}</span>
+                        <span class="arrow-icon"></span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+           </div>
+      </div>
+    </section>
+
+
+  </div>
+  </div>
+
+ <!--  <app-loadingscreen> </app-loadingscreen> -->
+  <app-footer [footerPostion]="1"></app-footer>
+
+
+
+
+     <!--  <div class="ProductList" *ngIf="transBool">
+
+          <ng-container *ngIf="owl">
              <owl-carousel-o
-              [options]="customOptionsIII" 
+              [options]="customOptionsIII"
               [carouselClasses]="['owl-theme']"
                 class="owl-carl">
                 <ng-container *ngFor="let slide of productImages">
@@ -111,79 +194,23 @@
                       </ng-template>
                 </ng-container>
              </owl-carousel-o>
-          </ng-container> 
-       
-     
-        </div> --> 
+          </ng-container>
 
-    </div>
 
-    <div class="item d">
-      <img src="../../../assets/contact.png" class="contactImg">
+        </div> -->
 
-      <div class="row">
-           <div class="col-md-6 section_content">
-            <div class="anim-2">
-              <h1 class="display_title">{{'HOME.CONTACT' | translate}}</h1>
-              <p>{{'HOME.CONTACTMSG' | translate}}</p>
-            </div>
-<br>
-            <div class="row">
-              <div class="col-12 col-md-6 col-lg-6">
-                <h4>{{'HOME.CONTACT' | translate}}</h4>
-                <p>{{'HOME.CALL' | translate}}: {{ContactData.MobileNum}}</p>
-                <p>{{'HOME.EMAIL' | translate}}: {{ContactData.Email}}</p>
-              </div>
-              <div class="col-12 col-md-6 col-lg-6">
-                <h4>{{'HOME.ADDRESSTITLE' | translate}}</h4>
-                <p class="AddressParg">
-                  {{ContactData.address}}
-                </p>
-              </div>
-            </div>
-            
-           </div>
-           <div class="col-md-6 formSection">
 
-            <div class="section-aside aside-bottom anim small-relative">
-              <div class="message-form">
-                <h4>{{'HOME.CONTACT' | translate}}</h4>
-                <div class="form-container form-container-card">
-                  <!-- Message form container -->
-                  <form class="send_message_form message form" id="message_form" novalidate="novalidate">
-                    <div class="form-group name">
-                      <input id="mes-name" name="name" type="text" placeholder="{{'HOME.NAME' | translate}}" class="form-control form-control-outline thick form-success-clean" required="" aria-required="true">
-                    </div>
-                    <div class="form-group email">
-                      <input id="mes-email" type="email" placeholder="{{'HOME.EMAIL' | translate}}" name="email" class="form-control form-control-outline thick form-success-clean" required="" aria-required="true">
-                    </div>
-                    <div class="form-group no-border">
-                      <textarea id="mes-text" placeholder="{{'HOME.MSG' | translate}}" name="message" class="form-control form-control-outline thick form-success-clean" required="" aria-required="true"></textarea>
-    
-                      <div>
-                        <p class="message-ok invisible form-text-feedback form-success-visible">Your message has been sent, thank you.</p>
-                      </div>
-                    </div>
-    
-                    <div class="btns text-right">
-                      <button id="submit-message" class="btn btn-outline-white btn-round btn-fullNot email_b" name="submit_message">
-                        <span class="txt">{{'HOME.SEND' | translate}}</span>
-                        <span class="arrow-icon"></span>
-                      </button>
-                    </div>
-                  </form>
+         <!-- <div class="myslider2 " id="slider2">
+            <div class="item" *ngFor="let slide of productImages;let i = index">
+              <div class="imgDiv">
+                <img [src]="slide.image" alt="slide" class="ProductImg">
+
+                <div class="ProductDetails">
+                  <h1> {{slide.title}} </h1>
+                  <p> {{slide.Des}} </p>
+                  <p>Details <span class="ArrowSpan"></span></p>
                 </div>
               </div>
             </div>
 
-
-           </div>
-      </div>
-    </div>
-
-
-  </div>
-  </div>
-  
- <!--  <app-loadingscreen> </app-loadingscreen> -->
-  <app-footer [footerPostion]="1"></app-footer>
+            </div> -->

@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { ProductService } from 'src/app/core/sharedServices';
+import { ChangeLangService, ProductService } from 'src/app/core/sharedServices';
 
 declare var $:any;
 @Component({
@@ -84,7 +84,7 @@ export class ProductsComponent implements OnInit {
   EngproductImages=[
     {
       id:1,
-      image:"https://www.precisionurethane.com/assets/images/content/urethane_rollers_gallery.jpg",
+      image:"https://images8.alphacoders.com/484/thumb-1920-484717.jpg",
       title:"Rubber Rollers",
       Des:"Lorem ipsum magicum dolor sit amet, consectetur adipiscing elit.Maecenas a sem ultrices neque vehicula fermentum a sit amet nulla."
     },
@@ -108,7 +108,7 @@ export class ProductsComponent implements OnInit {
     },
 
   ];
-  ArabicNumbers= ['۰','۱','۲','۳','٤','۵','۶','۷','۸','۹'];
+  ArabicNumbers= ['۰','۱','۲','۳','٤','۵','٦','۷','۸','۹'];
 
   ArabicproductImages = [];
   /* ArabicproductImages=[
@@ -146,86 +146,108 @@ export class ProductsComponent implements OnInit {
       this.owl = true;
     }, 5);
   }
-  
-  boolDR;
-  constructor(public router:Router,private translate:TranslateService,private prodServ:ProductService) { 
+
+  constructor( public router:Router,
+              private translate:TranslateService,
+              private prodServ:ProductService,
+              private changelngServ:ChangeLangService
+    ) {
+
 
     this.getProductData(()=>{
       this.fetchData = true;
       this.productImages = this.ArabicproductImages;
+     /*  this.slickSetSlider();
+      this.slickSetSliderI();
+      this.slickSetSliderII(); */
     })
-    
-     /*  let ProdLen = this.productImages.length;
-      this.slidesLen = this.ArabicNumbers[ProdLen]; 
-      let lang = this.translate.defaultLang;
-      if(lang == 'ar'){
-        this.slidesLen = this.ArabicNumbers[ProdLen]; 
-        this.boolDR = 'rtl';
-      }else{
-        this.slidesLen = ProdLen.toString(); 
-        this.boolDR = 'ltr';
-      } */
 
   }
 
   rtl_slick(){
-    let lang = localStorage.getItem("lang");
-    if (lang === "ar") {
-       return true;
-    } else {
-       return false;
-    }}
-    
+    let langVal = this.changelngServ.local_lenguage;
+    if(langVal == 'ar'){
+      return true;
+    }else if(langVal == 'en'){
+      return false;
+    }
+  }
 
-    
+
+
   ngOnInit(): void {
 
-    
-    
-    this.translate.onLangChange.subscribe(res=>{
+
+
+    /* this.translate.onLangChange.subscribe(res=>{
       this.productImages = this.ArabicproductImages;
       let ProdLen = this.productImages.length;
-  
+
         let currLang = this.translate.currentLang;
       if(currLang == 'ar'){
 
-        this.slidesLen = this.ArabicNumbers[ProdLen]; 
-     
+        this.slidesLen = this.ArabicNumbers[ProdLen];
+
       }else{
 
-        this.slidesLen = ProdLen.toString(); 
-      } 
+        this.slidesLen = ProdLen.toString();
+      }
       $('.myslider1').slick('refresh');
       $('.myslider2').slick('refresh');
       $('.myslider3').slick('refresh');
-    }); 
+    });  */
 
-    $(document).ready( () => {
+    this.changelngServ.change_lang.subscribe((res) => {
 
-     
+      this.productImages = this.ArabicproductImages;
+      let ProdLen = this.productImages.length;
+      console.log(res);
 
-      const $slider1 = $(".myslider1");
-      $slider1
+      if (res == 'ar') {
+        this.slidesLen = this.ArabicNumbers[ProdLen];
+        setTimeout(() => {
+          $('.myslider1').slick('slickSetOption',"rtl",true,true);
+          $('.myslider2').slick('slickSetOption',"rtl",true,true);
+          $('.myslider3').slick('slickSetOption',"rtl",true,true);
+         /*  this.slickSetSlider();
+          this.slickSetSliderI();
+          this.slickSetSliderII(); */
+        }, 5);
+      } else {
+        this.slidesLen = ProdLen.toString();
+        setTimeout(() => {
+          $('.myslider1').slick('slickSetOption',"rtl",false,true);
+          $('.myslider2').slick('slickSetOption',"rtl",false,true);
+          $('.myslider3').slick('slickSetOption',"rtl",false,true);
+          /* this.slickSetSlider();
+          this.slickSetSliderI();
+          this.slickSetSliderII(); */
+        }, 5);
+      }
+    });
+
+     $(document).ready( () => {
+
+        const $slider1 = $(".myslider1");
+     $slider1
       .slick({
         rtl:this.rtl_slick(),
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
         infinite:false,
         dots: false,
         draggable:true,
         cssEase: 'ease-in-out',
         speed:500 ,
-        asNavFor: '.asnavForClass' ,
-        prevArrow:"<a class='btn prevBtn' ><div class='arrowprevDiv noisy'><div class='left'></div><div class='leftTri'></div></div></a>",
-        nextArrow: "<a class='btn nextBtn'><div class='arrownextDiv noisy'><div class='right'></div><div class='triangle'></div></div></a>" 
+        asNavFor: '.asnavForClass'
+
         });
 
-        
 
       $slider1.on('beforeChange', (event, slick, currentSlide, nextSlide)=>{
-        
+
         if(nextSlide === 0){
-          $('.prevBtn').css("opacity","0"); 
+          $('.prevBtn').css("opacity","0");
         }
         else if(nextSlide === (slick.slideCount-1)){
           $('.nextBtn').css("opacity","0");
@@ -237,15 +259,17 @@ export class ProductsComponent implements OnInit {
       });
 
       const $slider2 = $(".myslider2");
-      $slider2
+       $slider2
       .slick({
         rtl:this.rtl_slick(),
         slidesToScroll: 1,
-        arrows: false,
+        arrows: true,
         infinite:false,
         dots: false,
         draggable:true,
-        asNavFor: '.asnavForClass'   
+        asNavFor: '.asnavForClass',
+        prevArrow:"<a class='btn prevBtn' ><div class='arrowprevDiv noisy'><div class='left'></div><div class='leftTri'></div></div></a>",
+        nextArrow: "<a class='btn nextBtn'><div class='arrownextDiv noisy'><div class='right'></div><div class='triangle'></div></div></a>"
         });
 
       const $slider3 = $(".myslider3");
@@ -259,34 +283,34 @@ export class ProductsComponent implements OnInit {
         draggable:false,
         speed:500 ,
         fade:true,
-        asNavFor: '.asnavForClass'   
+        asNavFor: '.asnavForClass'
         });
 
-        $slider1.on('aftreChange', (event, slick, currentSlide, nextSlide)=>{
-        
+         $slider1.on('aftreChange', (event, slick, currentSlide, nextSlide)=>{
+
           $slider1.slick({
             rtl: this.rtl_slick
           })
         });
         $slider2.on('aftreChange', (event, slick, currentSlide, nextSlide)=>{
-        
+
           $slider2.slick({
             rtl: this.rtl_slick
           })
         });
         $slider3.on('aftreChange', (event, slick, currentSlide, nextSlide)=>{
-        
+
           $slider3.slick({
             rtl: this.rtl_slick
           })
         });
     });
-   
-      
+
+
 
   }
 
-  
+
   GoToProduct(slideId){
     this.router.navigateByUrl("Productitem/"+ slideId);
   }
@@ -295,28 +319,71 @@ export class ProductsComponent implements OnInit {
     this.ArabicproductImages = this.prodServ.getproductData();
     callback();
   }
-  /* activeSlides: SlidesOutputData;
 
-  slidesStore: any[];
+/*   slickSetSlider(){
+    $(document).ready( () => {
+      $('.slider1')
+      .slick({
+        rtl:this.rtl_slick(),
+        slidesToScroll: 1,
+        arrows: true,
+        infinite:false,
+        dots: false,
+        draggable:true,
+        cssEase: 'ease-in-out',
+        speed:500 ,
+        asNavFor: '.asnavForClass' ,
+        prevArrow:"<a class='btn prevBtn' ><div class='arrowprevDiv noisy'><div class='left'></div><div class='leftTri'></div></div></a>",
+        nextArrow: "<a class='btn nextBtn'><div class='arrownextDiv noisy'><div class='right'></div><div class='triangle'></div></div></a>"
+        });
+
+        $('.slider1').on('beforeChange', (event, slick, currentSlide, nextSlide)=>{
+
+          if(nextSlide === 0){
+            $('.prevBtn').css("opacity","0");
+          }
+          else if(nextSlide === (slick.slideCount-1)){
+            $('.nextBtn').css("opacity","0");
+          }
+          else{
+            $('.prevBtn').css("opacity","1");
+            $('.nextBtn').css("opacity","1");
+          }
+        });
+    });
+  }
+
+  slickSetSliderI(){
+    $(document).ready( () => {
+      $('#slider2').slick({
+            rtl:this.rtl_slick(),
+            slidesToScroll: 1,
+            arrows: false,
+            infinite:false,
+            dots: false,
+            draggable:true,
+            asNavFor: '.asnavForClass'
+            });
+    });
+
+  }
+
+  slickSetSliderII(){
+    $(document).ready( () => {
+      $('#slider3').slick({
+                rtl:this.rtl_slick(),
+                slidesToScroll: 1,
+                arrows: false,
+                infinite:false,
+                dots: false,
+                draggable:false,
+                speed:500 ,
+                fade:true,
+                asNavFor: '.asnavForClass'
+                });
+    });
 
 
-  getPassedData(data: SlidesOutputData) {
-    this.activeSlides = data;
-    this.slidenum =this.activeSlides.startPosition; 
-    console.log(this.activeSlides);
-    let id = this.activeSlides.startPosition;
-
-  
-    if(id === 0){
-      $('.prevBtn').css("opacity","0"); 
-    }
-    else if(id === this.productImages.length-1){
-      $('.nextBtn').css("opacity","0");
-    }
-    else{
-      $('.prevBtn').css("opacity","1");
-      $('.nextBtn').css("opacity","1");
-    }
   } */
 
 

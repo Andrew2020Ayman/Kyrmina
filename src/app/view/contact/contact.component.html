@@ -1,4 +1,4 @@
-<div class="contact">
+<div class="contact" *ngIf="fetchData">
   <div class="imgPart " id="video">
   <div class="overlay"></div>
   <img src="../../../assets/wallpaperflare.com_wallpaper (1).jpg" alt="">
@@ -10,7 +10,7 @@
         {{'CONTACT.TOKYRMINA' | translate}} .</h1>
       </div>
 <!--       <p>Learn how innovative teams like yours leverage design to increase revenue, position products, and grow market share.</p> -->
-      <a href="Contact#formSection" class="scrollComp"><span></span>{{'CONTACT.SCROLL' | translate}}</a>
+      <a  (click)="scrollFunc()"  class="scrollComp"><span></span>{{'CONTACT.SCROLL' | translate}}</a>
 
     </div>
 
@@ -25,36 +25,55 @@
              <h4>
               {{'CONTACT.OREMAIL' | translate}}
              </h4>
-             <p class="parTxt"> 
+             <p class="parTxt">
               <!-- <i class="far fa-envelope"></i>  -->
               <i class="fad fa-envelope"></i>
-              email2010@test.com</p>
+              {{ContactData.Email}} </p>
              <p class="parTxt">
-              <!-- <i class="fas fa-phone-alt"></i>  
+              <!-- <i class="fas fa-phone-alt"></i>
               <i class="fad fa-mobile"></i>-->
               <i class="fad fa-mobile-alt mobileIcon"></i>
-              012345879787</p>
+              {{ContactData.MobileNum}}  - {{ContactData.MobileNumI}}
+            </p>
         </div>
         <div class="col-md-6">
-        
-        <form class="form" >
-            <input id="contactAuthor" type="text" placeholder="{{'HOME.NAME' | translate}}" name="data[name]" value="" tabindex="1">
-            <input id="contactEmail" type="email" placeholder="{{'HOME.EMAIL' | translate}}" name="data[email]" value="" tabindex="2">
-            
-            <textarea id="contactComment" placeholder="{{'HOME.MSG' | translate}}" name="data[message]" tabindex="4"></textarea>
 
-            <input type="hidden" name="__form-name__" value="contact-form">
-            <button class="btn " type="submit" value="Send" tabindex="100">
-            <span>{{'HOME.SEND' | translate}}</span>
+        <form class="form" [formGroup]="EmailForm"  (ngSubmit)="sendEmail($event)" id="message_form" novalidate="novalidate" >
+          <div class="form-group name">
+            <input id="from_name" name="from_name" type="text" formControlName="from_name"
+            [ngClass]="{'is-invalid': EmailForm.get('from_name').errors
+                  && EmailForm.get('from_name').touched}"
+             placeholder="{{'HOME.NAME' | translate}}" class="form-control form-control-outline thick form-success-clean" aria-required="true">
+            <div class="invalid-feedback">Please Enter your name.</div>
+          </div>
+          <div class="form-group email">
+            <input id="form_email" type="email" placeholder="{{'HOME.EMAIL' | translate}}" name="form_email"
+            formControlName="form_email"  placeholder="{{'HOME.EMAIL' | translate}}"
+            [ngClass]="{'is-invalid': EmailForm.get('form_email').errors
+                  && EmailForm.get('form_email').touched}"
+
+            class="form-control form-control-outline thick form-success-clean" aria-required="true">
+            <div class="invalid-feedback">Please Enter your email</div>
+          </div>
+          <div class="form-group no-border">
+            <textarea id="message" placeholder="{{'HOME.MSG' | translate}}" name="message" formControlName="message"
+             class="form-control form-control-outline thick form-success-clean"aria-required="true"></textarea>
+          </div>
+
+          <div class="btns text-right">
+            <button id="submit-message" type="submit" [disabled]="!EmailForm.valid" class="btn btn-outline-white btn-round btn-fullNot email_b" name="submit_message">
+              <span class="txt">{{'HOME.SEND' | translate}}</span>
+              <span class="arrow-icon"></span>
             </button>
-            <input type="hidden" name="__unique_form_id__" value="eEA4HmLBWRZGQUz9Ppn7">  <input type="hidden" name="form-nonce" value="523a189e8ce8d17735a505e035d68792">
-        </form>
+          </div>
+
+          </form>
 
         </div>
 
       </div>
   </section>
-  
+
   <section class="LocationSec">
      <div class="row titlePart">
        <div class="col-md-3">
@@ -63,8 +82,11 @@
        <div class="col-md-1"></div>
        <div class="col-md-4 addressDiv">
            <h1> Cairo</h1>
-           <p>36 El-Shaheed Hany Abd El-Wahab St. <br> Berket an Nasr, Al Salam First</p>
-           <p>Cairo , Egypt .</p>
+           <p *ngIf="changelngServ.local_lenguage == 'ar'">{{ContactData.Araddress}}</p>
+           <p *ngIf="changelngServ.local_lenguage == 'en'">{{ContactData.address}}</p>
+           <br>
+           <p *ngIf="changelngServ.local_lenguage == 'ar'"> {{ContactData.Arcity}} </p>
+           <p *ngIf="changelngServ.local_lenguage == 'en'"> {{ContactData.Encity}} </p>
        </div>
      </div>
   </section>
@@ -72,11 +94,13 @@
 
 
 <section class="mapSec">
+   <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=30.156920,%2031.390396&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+        </iframe>
 
-  <div class="earth3dmap-com">
-    <iframe id="iframemap" src="https://maps.google.com/maps?q=30.144461274626156%2C+31.392010864466496&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-     width="100%" height="500" frameborder="0" scrolling="no">
-    </iframe>
+      </div>
   </div>
 
    <h4> <small>&copy; Kyrmina 2021</small>  </h4>

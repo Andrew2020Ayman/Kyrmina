@@ -1,61 +1,66 @@
 <header>
     <div class="row">
-        
+
         <div class="col-md-12 col-nav">
-  
+
             <nav class="navbar navbar-light bg-lignt BurgerMenu ">
 
-                <div class="col-md-2">
-                    <img src="../../../assets/final.png" class="LogoDiv" id="LogoDiv"  [routerLink]="['']" >
+                 <div class="col-lg-8 compCont">
+                     <div class="imgCont">
+                        <img src="../../../assets/finalSquare.png" class="LogoDiv" id="LogoDiv"  (click)="GotoPage(1)"  >
+                     </div>
+
+                     <div class="LogoName" id="LogoName">
+                      <h1 class="CompanyName"> {{'NAVBAR.COMPANY' | translate}} </h1>
+                      <h1 class="FieldName"> {{'NAVBAR.COMPDES' | translate}} </h1>
+                  </div>
                 </div>
 
-                <div class="col-md-6"> 
-                    <div class="LogoName" id="LogoName">
-                        <h1 class="CompanyName"> {{'NAVBAR.COMPANY' | translate}} </h1>
-                        <h1 class="FieldName"> {{'NAVBAR.COMPDES' | translate}} </h1>
-                    </div>
-               </div>
 
-                <div class="col-md-2 minmarginTop" style="padding-right: 0;">
-                    <!-- <button class="quotebtn"> Contact Us</button> -->
+
+                <div class="col-lg-2 minmarginTop" style="padding-right: 0;">
+
                 </div>
 
-                <div class="col-md-1 px-1 minmarginTop" id="minmarginTop">
+                <div class="col-lg-1 px-1 minmarginTop" id="minmarginTop">
                      <div class="select">
-                        <select name="Langselect" id="Langselect" #selectedCategory (change)="getselectvalue(selectedCategory.value)" >
+                        <select name="Langselect" id="Langselect" #selectedCategory
+
+                        [value]='currentVal' (change)="getselectvalue(selectedCategory.value)" >
                           <option  value="1" >{{'NAVBAR.EN' | translate}}</option>
-                          <option selected value="2">{{'NAVBAR.AR' | translate}}</option>
+                          <option  value="2">{{'NAVBAR.AR' | translate}}</option>
                         </select>
-                      </div> 
+                      </div>
                 </div>
 
-                <div class="col-md-1">
+                <div class="col-lg-1">
                     <div class="menu">
                       <button class="nav-tgl" id="nav-tgl" type="button" aria-label="toggle menu" >
                       <span aria-hidden="true"></span>
                     </button>
 
                       <div id="myNav" class="overlay">
-                    
+
                           <div class="overlay-content">
                             <div class="row MenuRow">
                               <div class="RouterLinks">
-                                <a class="listItem " [routerLink]="['Home']" >{{'NAVBAR.HOME' | translate}}</a>
-                                <a class="listItem " [routerLink]="['About']" >{{'NAVBAR.ABOUT' | translate}}</a>
-                                <a class="listItem " [routerLink]="['Product']" >{{'NAVBAR.PRODUCT' | translate}}</a>
-                                <a class="listItem " [routerLink]="['Contact']" >{{'NAVBAR.CONTACT' | translate}}</a>
+
+                                <a class="listItem " (click)="GotoPage(1)" >{{'NAVBAR.HOME' | translate}}</a>
+                                <a class="listItem " (click)="GotoPage(2)" >{{'NAVBAR.ABOUT' | translate}}</a>
+                                <a class="listItem " (click)="GotoPage(3)">{{'NAVBAR.PRODUCT' | translate}}</a>
+                                <a class="listItem " (click)="GotoPage(4)" >{{'NAVBAR.CONTACT' | translate}}</a>
                               </div>
                             </div>
-                            
+
                           </div>
                       </div>
                     </div>
                 </div>
-            </nav> 
+            </nav>
         </div>
     </div>
-    
 
-   
+
+
 
 </header>

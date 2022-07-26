@@ -23,7 +23,9 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
+import { ToastrModule } from 'ngx-toastr';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export const createTranslateLoader = (http: HttpClient) => {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 };
@@ -49,7 +51,10 @@ export const createTranslateLoader = (http: HttpClient) => {
     OwlModule,
     RoundProgressModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
     CoreModule,
+    FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -58,6 +63,7 @@ export const createTranslateLoader = (http: HttpClient) => {
       }
     })
   ],
+  exports:[ToastrModule],
   providers: [CarouselModule],
   bootstrap: [AppComponent]
 })
