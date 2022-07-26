@@ -18,9 +18,6 @@ export class LoadingscreenComponent implements OnInit {
     this.plusnum(this.currentNum);
   }
 
-  doSomethingWithCurrentValue(e){
-    
-  }
 
   plusnum(num){
     if(num < 100){
@@ -29,7 +26,7 @@ export class LoadingscreenComponent implements OnInit {
       setTimeout(() => {
         this.plusnum(num);
       }, 30);
-      
+
     }
     else if(this.radnum > 0) {
       setTimeout(() => {
@@ -37,27 +34,27 @@ export class LoadingscreenComponent implements OnInit {
         this.strokenum -= 0.2
         this.plusnum(num);
       }, 5);
-      
+
     }
     else{
       setTimeout(() => {
-       $('.overlay').css("opacity","1"); 
+       $('.overlay').css("opacity","1");
       }, 100);
-      
+
       setTimeout(() => {
-        $('.overlay').css("height","100%"); 
+        $('.overlay').css("height","100%");
         $('.overlay').css("bottom","0");
-       
+
        }, 500);
        setTimeout(() => {
         $('.overlay').css("border-top-left-radius","0");
         $('.overlay').css("border-top-right-radius","0");
-        
+
        }, 800);
        setTimeout(() => {
-        $('.loadingScreen').css("display","none"); 
+        $('.loadingScreen').css("display","none");
        }, 1500);
-      
+
     }
   }
 }
