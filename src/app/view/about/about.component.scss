@@ -153,7 +153,7 @@ height: 100vh;
 }
 
 .textJust{
-  text-align: justify;
+  text-align: start;
 }
 .QuesText{
   font-size: 25px;
@@ -370,10 +370,15 @@ height: 100vh;
 
   @media screen and (max-width: 770px){
     .wrapper h1 {
-      font-size: 50px;
+      font-size: 50px !important;
     }
     .row {
       width: 100%;
       margin: 0 auto;
+  }
+  ::ng-deep{
+    .rtl{
+
+    }
   }
   }

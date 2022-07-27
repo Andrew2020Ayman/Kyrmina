@@ -21,9 +21,7 @@ export class ProductItemComponent implements OnInit {
   let productIndex = this.route.snapshot.params.id;
   this.getProductData(()=>{
     this.fetchData = true;
-    console.log("done");
     this.productData = this.Arabicproduct[productIndex];
-    console.log(this.productData);
 
   })
   }

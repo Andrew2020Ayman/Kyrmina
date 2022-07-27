@@ -201,7 +201,6 @@ export class ProductsComponent implements OnInit {
 
       this.productImages = this.ArabicproductImages;
       let ProdLen = this.productImages.length;
-      console.log(res);
 
       if (res == 'ar') {
         this.slidesLen = this.ArabicNumbers[ProdLen];

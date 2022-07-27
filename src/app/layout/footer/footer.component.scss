@@ -80,6 +80,14 @@
     right: 39px;
     width: 100%;
     z-index: 8;
-    bottom: 36px !important;
+    bottom: 7px !important;
+}
+
+::ng-deep{
+  .rtl{
+    .FooterNav{
+      padding-left: 17%;
+    }
+  }
 }
 }

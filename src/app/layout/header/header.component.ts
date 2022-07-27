@@ -134,7 +134,6 @@ export class HeaderComponent implements OnInit {
     }
   }
   GotoPage(pageNum){
-    console.log(pageNum,this.currentLang);
 
     if(pageNum == 1){
       this.router.navigateByUrl('Home');

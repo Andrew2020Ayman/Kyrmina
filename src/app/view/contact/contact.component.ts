@@ -73,10 +73,8 @@ export class ContactComponent implements OnInit {
     emailjs.sendForm(this.serviceID, this.templateID, e.target as HTMLFormElement, this.publicKey)
       .then((result: EmailJSResponseStatus) => {
         this.toastr.success('message sent successfully');
-        console.log('SUCCESS!',result.text);
       }, (error) => {
         this.toastr.error('message failed to send');
-        console.log(error.text);
       });
 
     }

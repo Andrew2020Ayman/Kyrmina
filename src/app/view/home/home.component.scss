@@ -1066,6 +1066,9 @@
   ::ng-deep .slick-dots {
     display: none !important;
   }
+  .AboutImg {
+    height: 206px;
+  }
 #top-image {
     background-size: cover;
     background-position: center;
@@ -1075,7 +1078,7 @@
   top: 8em;
  }
  .myslider .item.b .itemContentI {
-    top: 29em;
+    top: 23em;
     margin: 0% auto;
  }
  .myslider .item.b .itemContent .TxtCol {
@@ -1086,7 +1089,7 @@
  .myslider .item.b .itemContent .TxtCol p {
   color: white;
   padding: 0;
-  font-size: 17px;
+  font-size: 15px;
   text-align: justify;
 }
 .myslider .item.b .itemContent .AboutSlide {
@@ -1099,8 +1102,8 @@
   }
   .myslider .item.a .itemContent .TxtCol {
     width: 100%;
-    margin: 1em 2em;
-    margin-top: 15%;
+    margin: 1% 1em 1em 3em;
+    margin-top: 0%;
  }
  .myslider .item.a .itemContent .TxtCol h1 {
    font-size: 9vw;
@@ -1109,20 +1112,20 @@
    font-size: 26px;
   }
   .scrollComp {
-    margin-top: 22%;
-
+    margin-top: 15%;
+    margin-left: -7%;
   }
   .myslider .item.c .productRow {
     margin-top: 45%;
    }
   .myslider .item.c .imgDiv {
     height: 100vh;
-    margin: 18em 0%;
+    margin: 15em 0%;
     position: relative;
    }
    .myslider .item.c .imgDiv .ProductImg {
-    width: 30vh !important;
-    height: 30vh !important;
+    width: 25vh !important;
+    height: 25vh !important;
    }
    .myslider .item.c .ProductDetails {
     position: absolute;
@@ -1142,14 +1145,14 @@
     .myslider .item.c .ProductDetails p {
       padding: 1% 21%;
       color: white;
-      font-size: 15px;
+      font-size: 13px;
       text-align: justify;
   }
   .myslider .item.c .ProductDetails .ArrowSpan {
     position: relative;
     font-size: 15px;
     top: -12px;
-    left: 60%;
+    left: 48%;
   }
 
   .myslider .item.d .contactImg {
@@ -1159,21 +1162,24 @@
     width: 100%;
   }
   .myslider .item.d .section_content {
-    padding: 11% 11% 10% 11%;
+    padding: 5% 7% 10% 13%;
     color: white;
-    margin-top: 34%;
+    margin-top: 32%;
   }
   .myslider .item.d .section_content .display_title {
     font-weight: bold;
-    font-size: 45px;
+    font-size: 30px;
     line-height: 1.1;
+  }
+  .myslider .item.d .section_content p{
+    font-size: 12px;
   }
   .Contactrow{
     margin-top: -8%;
   }
   .myslider .item.d .formSection .section-aside {
     position: relative;
-    bottom: 38px;
+    bottom: 43px;
     padding-right: unset;
     right: unset;
     width: 100%;
@@ -1183,20 +1189,49 @@
     flex-direction: column;
     z-index: 1;
 }
+.form-group input{
+  height: 30px;
+}
+
 .text-right {
   text-align: center !important;
-  margin-top: -7%;
+  margin-top: -5%;
  }
+ .myslider .item.d .section_content .AddressParg {
+  margin-top: -4%;
+  font-size: 14px;
+}
  .myslider .item.d .formSection h4 {
   display: none;
   }
+  .myslider .item.d .section_content h4 {
 
+    font-size: 16px;
+    }
   .myslider .item.d .formSection .section-aside .message-form {
     width: 60%;
    }
    .myslider .item.d .formSection .section-aside .message-form form textarea {
-    height: 100px;
-    max-height: 100px;
-    min-height: 100px;
+    height: 60px;
+    max-height: 60px;
+    min-height: 60px;
+  }
+  ::ng-deep{
+    .rtl{
+      .myslider .item.a .itemContent .TxtCol {
+        width: 100%;
+        margin: 1% 3em 1em 2em !important;
+       }
+       .scrollComp {
+        margin-top: 15% !important;
+        margin-left: unset !important;
+        margin-right: -5% !important;
+       }
+       .myslider .item.c .ProductDetails {
+        position: absolute;
+        width: 100%;
+        margin-right: 9% !important;
+       }
+    }
   }
 }

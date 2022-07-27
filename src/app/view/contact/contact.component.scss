@@ -76,6 +76,7 @@ background: linear-gradient(90deg, rgba(0,0,0,0.896796218487395) 0%, rgba(0,0,0,
   letter-spacing: -2px;
   text-transform: uppercase;
   font-family: "Gotham-Bold", "Helvetica Neue", sans-serif;
+  font-family: "Krona One", sans-serif;
   font-weight: 800;
   color: white;
  }
@@ -245,7 +246,7 @@ form textarea {
        padding-right: 60px !important;
        margin-bottom: 20px !important;
        letter-spacing:3px !important;
-       font-family: 'Cairo' !important;
+       font-family: 'El Messiri', sans-serif !important;
      }
       p.eyebrow:before {
          left: unset !important;
@@ -267,14 +268,14 @@ form textarea {
      margin-bottom: 30px !important;
      letter-spacing: 0px !important;
      text-transform: uppercase !important;
-     font-family: 'Cairo' !important;
+     font-family: 'El Messiri', sans-serif !important;
      font-weight: 700 !important;
      color: white !important;
     }
     p{
      text-align: start !important;
         color: white !important;
-        font-family: 'Cairo' !important;
+        font-family: 'El Messiri', sans-serif !important;
     }
     }
     .wrapper .scrollComp {
@@ -290,12 +291,12 @@ form textarea {
         padding:  0% 7%;
 
         h1{
-          font-family: 'Cairo' !important;
+          font-family: 'El Messiri', sans-serif !important;
           text-align: start !important;
         }
         .msgTxt{
           padding: 0% 2% 10% 3% !important;
-          font-family: 'Cairo' !important;
+          font-family: 'El Messiri', sans-serif !important;
           text-align: start !important;
         }
         h4{
@@ -327,13 +328,13 @@ form textarea {
     }
 
     .locationtxt {
-      font-family: 'Cairo' !important;
+      font-family: 'El Messiri', sans-serif !important;
       text-align: start !important;
       font-size: 50px !important;
       font-weight: 700 !important;
   }
   .addressDiv {
-      font-family: 'Cairo' !important;
+      font-family: 'El Messiri', sans-serif !important;
       text-align: start !important;
   }
 
@@ -342,7 +343,7 @@ form textarea {
         right: 3% !important;
         left: unset !important;
         font-size: 19px !important;
-        font-family: 'Cairo' !important;
+        font-family: 'El Messiri', sans-serif !important;
       }
     }
   }
@@ -395,14 +396,14 @@ form textarea {
 
 @media only screen and (max-width: 770px){
   .wrapper {
-    top: 52%;
+    top: 32%;
   }
   .wrapper h1 {
-    font-size: 48px;
+    font-size: 43px;
   }
   img {
     object-fit: cover;
-    object-position: 27% -6px;
+    object-position: 27% 0px;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -428,9 +429,15 @@ form textarea {
   text-align: center;
 }
 .formSec .textPart .parTxt {
-  font-size: 26px;
+  font-size: 18px;
   text-align: justify;
   padding: 0% 6%;
+}
+
+::ng-deep{
+  .rtl{
+
+  }
 }
 
 }
