@@ -6,9 +6,9 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable()
 export class ChangeLangService {
 
-    local_lenguage = 'en';
+    local_lenguage = 'ar';
     changeNewArrival = new BehaviorSubject(null);
-    change_lang = new BehaviorSubject('en');
+    change_lang = new BehaviorSubject('ar');
 
     constructor( private translate: TranslateService) { }
 

@@ -141,6 +141,7 @@ export class HomeComponent implements OnInit  {
   activeSlides: SlidesOutputData;
   slidesStore: any[];
   owl:boolean = true;
+  mobileView = false;
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     //this.load();
@@ -148,6 +149,29 @@ export class HomeComponent implements OnInit  {
     setTimeout(() => {
       this.owl = true;
     }, 10);
+
+    if(window.innerHeight > 770){
+      this.mobileView = false;
+    }else{
+      this.mobileView = true;
+    }
+    /* --------mouse move---------- */
+
+    /* $(document).ready(function() {
+      if(window.innerHeight > 770){
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+        $("#slider").mousemove(function(e){
+                  var pageX = e.pageX - ($(window).width() / 2);
+                  var pageY = e.pageY - ($(window).height() / 2);
+                  var newvalueX = width * pageX * -1 - 25;
+                  var newvalueY = height * pageY * -1 - 50;
+                  $('#top-image').css("background-position", newvalueX+"px     "+newvalueY+"px");
+        });
+       }
+      }); */
+    /* ----------------------------- */
   }
   /* ---------------------------------- */
   constructor( public translate:TranslateService,
@@ -157,6 +181,7 @@ export class HomeComponent implements OnInit  {
                private toastr: ToastrService ,
                private fb : FormBuilder,
                public router:Router) {
+
   }
 
   load() {
@@ -171,6 +196,7 @@ export class HomeComponent implements OnInit  {
     });
   }
   ngOnInit(): void {
+/* console.log(window.innerHeight); */
 
    this.createEmailForm();
 
@@ -179,19 +205,32 @@ export class HomeComponent implements OnInit  {
   });
 
     /* --------mouse move---------- */
-    $(document).ready(function() {
-      var movementStrength = 25;
-      var height = movementStrength / $(window).height();
-      var width = movementStrength / $(window).width();
-      $("#slider").mousemove(function(e){
-                var pageX = e.pageX - ($(window).width() / 2);
-                var pageY = e.pageY - ($(window).height() / 2);
-                var newvalueX = width * pageX * -1 - 25;
-                var newvalueY = height * pageY * -1 - 50;
-                $('#top-image').css("background-position", newvalueX+"px     "+newvalueY+"px");
+
+
+      $(document).ready(() => {
+
+
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+        $("#slider").mousemove((e)=>{
+          if(!this.mobileView){
+          console.log("slider active");
+
+                  var pageX = e.pageX - ($(window).width() / 2);
+                  var pageY = e.pageY - ($(window).height() / 2);
+                  var newvalueX = width * pageX * -1 - 25;
+                  var newvalueY = height * pageY * -1 - 50;
+                  $('#top-image').css("background-position", newvalueX+"px     "+newvalueY+"px");
+                }
+        });
+
+
       });
-      });
+
+
     /* ----------------------------- */
+
  /* -------- slider part ---------- */
  $(document).ready(function () {
   const $slider = $(".myslider");

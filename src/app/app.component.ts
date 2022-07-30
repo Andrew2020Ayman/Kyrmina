@@ -23,16 +23,16 @@ export class AppComponent  implements OnInit  {
   ngOnInit() :void {
 
     this.translate.addLangs(['en', 'ar']);
-    this.translate.setDefaultLang('en');
-   
+    this.translate.setDefaultLang('ar');
+
   }
- 
+
  /*  checkLang(){
     this.CurrentUrl = window.location.href;
     console.log(this.CurrentUrl);
     let ArFound = this.CurrentUrl.search("ar");
     let EnFound = this.CurrentUrl.search("en");
-    
+
     if(ArFound >= 0){
       this.translate.use('ar');
       this.translate.setDefaultLang('ar');
