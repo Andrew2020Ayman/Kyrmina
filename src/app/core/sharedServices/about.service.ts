@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 export class AboutService {
 
  About = {
-     Who:`كيرمينا لمنتجات الكاوتشوك و البلاستيك هي شركة رائدة في مجال صناعة الكاوتشوك لدينا خبرة تزيد عن الثلاثون عاماً داخل السوق المصري والعربي.
-     نقوم بإنتاج جميع أنواع المطاط الطبيعي والصناعي المضاد  للأحماض والمواد البترولية والقلويات وخامة السليكون المضادة لدرجات الحرارة العالية و الأحماض وخامة البولي يوريثان المضادة  للضغوط و الاحتكاك و منتجات اخرى كثيرة. نعدكم بأفضل مستوى من الجودة العالية و إلتزامنا بأحدث وأدق المعاييرو المواصفات العالمية فى جميع خدامتنا. و حرصنا على خدمة ما بعد البيع أو أى إستشارات فنية .   
+     Who:`كيرمينا لمنتجات الكاوتشو هي شركة رائدة في مجال صناعة الكاوتشوك لدينا خبرة تزيد عن الثلاثون عاماً داخل السوق المصري والعربي.
+     نقوم بإنتاج جميع أنواع المطاط الطبيعي والصناعي المضاد  للأحماض والمواد البترولية والقلويات وخامة السليكون المضادة لدرجات الحرارة العالية و الأحماض وخامة البولي يوريثان المضادة  للضغوط و الاحتكاك و منتجات اخرى كثيرة. نعدكم بأفضل مستوى من الجودة العالية و إلتزامنا بأحدث وأدق المعاييرو المواصفات العالمية فى جميع خدامتنا. و حرصنا على خدمة ما بعد البيع أو أى إستشارات فنية .
      `,
      what:`نقدم فى كيرمينا منتجات متعددة تتميز بكفاءة عالية و جودة متميزة وفقاً للمعايير و المواصفات الدولية مثل:`,
      whatList:[
@@ -17,7 +17,7 @@ export class AboutService {
          "السيلكون",
          "البولي يوريثان"
      ],
-     WhoEn:`Kyrmina for rubber and plastic products is a leading company in the rubber industry.
+     WhoEn:`Kyrmina for rubber products is a leading company in the rubber industry.
      We have more than thirty years of experience in the Egyptian and Arab market.
       We produce all kinds of natural and synthetic rubber against acids, petroleum and alkali materials,
        silicone materials against high temperatures and acids, polyurethane materials against pressure and
@@ -27,7 +27,7 @@ export class AboutService {
 
     whatEn:`In Kyrmina, we offer multiple products that are characterized by high efficiency
            and outstanding quality in accordance with international standards and specifications, such as:`   ,
-    
+
     whatListEn:[
         "Cylinders and rollers",
         "Compressions & towing",
@@ -35,7 +35,7 @@ export class AboutService {
         "Metal rollers",
         "Silicon rollers",
         "polyurethane rollers"
-    ] 
+    ]
 
     };
 
