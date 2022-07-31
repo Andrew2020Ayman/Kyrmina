@@ -121,14 +121,14 @@ export class HeaderComponent implements OnInit {
     if(value == 1){
       this.translate.use('en');
       localStorage.setItem("lang","en");
-      this.titleService.setTitle("Kyrmina For Rubber Products");
+    /*   this.titleService.setTitle("Kyrmina For Rubber Products"); */
       this.changelngServ.change_lang.next('en');
       this.changelngServ.local_lenguage = 'en';
 
     }else if( value == 2){
       this.translate.use('ar');
       localStorage.setItem("lang","ar");
-      this.titleService.setTitle("كيرمينا لمنتجات الكاوتشوك");
+      /* this.titleService.setTitle("كيرمينا لمنتجات الكاوتشوك"); */
       this.changelngServ.change_lang.next('ar');
     this.changelngServ.local_lenguage = 'ar';
     }

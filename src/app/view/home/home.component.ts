@@ -209,14 +209,11 @@ export class HomeComponent implements OnInit  {
 
       $(document).ready(() => {
 
-
         var movementStrength = 25;
         var height = movementStrength / $(window).height();
         var width = movementStrength / $(window).width();
         $("#slider").mousemove((e)=>{
           if(!this.mobileView){
-          console.log("slider active");
-
                   var pageX = e.pageX - ($(window).width() / 2);
                   var pageY = e.pageY - ($(window).height() / 2);
                   var newvalueX = width * pageX * -1 - 25;
@@ -224,10 +221,7 @@ export class HomeComponent implements OnInit  {
                   $('#top-image').css("background-position", newvalueX+"px     "+newvalueY+"px");
                 }
         });
-
-
       });
-
 
     /* ----------------------------- */
 
