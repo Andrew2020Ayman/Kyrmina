@@ -219,7 +219,9 @@ export class HomeComponent implements OnInit  {
                   var newvalueX = width * pageX * -1 - 25;
                   var newvalueY = height * pageY * -1 - 50;
                   $('#top-image').css("background-position", newvalueX+"px     "+newvalueY+"px");
-                }
+          }else{
+            this.mobileView = true;
+          }
         });
       });
 
