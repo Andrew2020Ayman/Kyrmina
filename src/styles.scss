@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(~fullpage.js/dist/fullpage.min.css);
 
+.disH{
+  z-index: 5465;
+  position: absolute;
+  width: 0;
+  display: none;
+  opacity: 0;
+}
+
 body{
     scroll-behavior: smooth;
     height: 100%;
@@ -100,6 +108,3 @@ html {
   }
 
 
-  .disH{
-    display: none;
-  }
