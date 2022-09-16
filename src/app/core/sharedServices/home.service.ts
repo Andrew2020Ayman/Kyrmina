@@ -89,7 +89,7 @@ ArProducts=[
       },
       {
         id:6,
-        image:"../../../assets/products/polyKyrmina.jpeg",
+        image:"../../../../assets/products/polyKyrmina.jpeg",
         title:"البولي يوريثان",
         titleEn:"polyurethane rollers",
         EnDes:"This material is characterized by superior strength to withstand pressures and friction",
