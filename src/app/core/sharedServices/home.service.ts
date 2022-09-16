@@ -89,7 +89,7 @@ ArProducts=[
       },
       {
         id:6,
-        image:"https://www.danskgummi.com/wp-content/uploads/2020/08/PU-polyurethane-rollers-640x640.jpg",
+        image:"../../../assets/products/polyKyrmina.jpeg",
         title:"البولي يوريثان",
         titleEn:"polyurethane rollers",
         EnDes:"This material is characterized by superior strength to withstand pressures and friction",
